@@ -1,3 +1,5 @@
+/* ======== Bunch of variables for easy access ===== ethinte avishyam ella since we using simple schemes */
+
 :root {
     --color-primary: #41a6f3 ;
     --color-primary-light: #9ad3fe;
@@ -18,4 +20,25 @@
 
 }
 
-/* ================== General stuff thats universal so i dont have to repeat */
+/* ======= General stuff thats universal so i dont have to repeat =========== */
+* 
+{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    appearance: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: black;
+    overflow-x: hidden;
+    background:#a8dadc;
+
+}
+
+/* currently at 45:23 at the first video */
