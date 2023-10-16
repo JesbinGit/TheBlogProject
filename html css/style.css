@@ -1,9 +1,9 @@
 /* ======== Bunch of variables for easy access ===== ethinte avishyam ella since we using simple schemes */
 
 :root {
-    --color-primary: #41a6f3 ;
-    --color-primary-light: #9ad3fe;
-    --color-primary-varient:  #85cbff;
+    --color-primary: #101284 ;
+    --color-primary-light: #1c1fe3;
+    --color-primary-varient:  #101284b9;
     --color-red: #da0f3f;
     --color-red-light: hsl(346, 87%, 46%, 15%);
     --color-green: #00c476;
@@ -46,15 +46,28 @@
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
-    color: black;
+    color: var(--color-white);
     overflow-x: hidden;
-    background:#a8dadc;
+    background: var(--color-bg);
 
 }
 
 /* currently at 45:23 at the first video */
 
-/*============ Form General============*/
+/*======================================== Form General========================================*/
+
+.btn{
+    display: inline-block;
+    width: fit-content;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--color-primary);
+    border-radius: var(--card-border-radius-2);
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--color-white);
+}
+
+/*======================================== Form General========================================*/
 .form_section{
     display: grid;
     place-items: center;
@@ -96,5 +109,12 @@ form {
 input, textarea, select{
     padding: 0.8rem 1.4rem;
     background-color: var(--color-gray-900);
-    
+    border-radius: var(--card-border-radius-2);
+    resize: none;
+    color: var(--color-white);   
+}
+
+.form_section small{
+    margin-top: 1rem;
+    display: block;
 }
