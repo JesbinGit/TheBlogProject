@@ -4,6 +4,17 @@
     --color-primary: #41a6f3 ;
     --color-primary-light: #9ad3fe;
     --color-primary-varient:  #85cbff;
+    --color-red: #da0f3f;
+    --color-red-light: hsl(346, 87%, 46%, 15%);
+    --color-green: #00c476;
+    --color-green-light: hsl(156, 100%, 38%, 15%);
+    --color-gray-900: #1e1e66;
+    --color-gray-700: #2d2b7c;
+    --color-gray-300: rgba(242, 242, 254, 0.3);
+    --color-gray-200: rgba(242, 242, 254, 0.7);
+    --color-white: #f2f2fe;
+    --color-bg: #0f0f3e;
+
 
     --transition: all 300ms ease;
    
@@ -42,3 +53,48 @@ body {
 }
 
 /* currently at 45:23 at the first video */
+
+/*============ Form General============*/
+.form_section{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.form_section-container{
+    width: var(--form-width);
+}
+
+.alert_message{
+    padding: 0.8rem 1.4rem;
+    margin-bottom: 1rem;
+    border-radius: var(--card-border-radius-2);
+}
+
+.alert_message.error{
+    background: var(--color-red-light);
+    color: var(--color-red);
+}
+
+.alert_message.success{
+    background: var(--color-green-light);
+    color: var(--color-green);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form_control{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+input, textarea, select{
+    padding: 0.8rem 1.4rem;
+    background-color: var(--color-gray-900);
+    
+}
