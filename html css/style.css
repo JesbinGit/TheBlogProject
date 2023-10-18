@@ -1,9 +1,9 @@
 /* ======== Bunch of variables for easy access ===== ethinte avishyam ella since we using simple schemes */
 
 :root {
-    --color-primary: #470c94 ;
-    --color-primary-light: #1c1fe3;
-    --color-primary-varient:  #101284b9;
+    --color-primary: #6f6af8;
+    --color-primary-light: hsla(242, 91%, 69%, 0.18);
+    --color-primary-variant: #5854c7;
     --color-red: #da0f3f;
     --color-red-light: hsl(346, 87%, 46%, 15%);
     --color-green: #00c476;
@@ -47,15 +47,64 @@
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
-    color: var(--color-white);
+    color: var(--color-gray-900);
     overflow-x: hidden;
     background: var(--color-bg);
+    font-size: 0.9rem;
 
 }
 
-/* currently at 45:23 at the first video */
+.container{
+    width: var(--container-width-lg);
+    max-width: 1800px;
+    margin-inline: auto;
 
-/*======================================== Button========================================*/
+}
+
+section{
+    margin-top: 3rem;
+    width: 100vw;
+}
+
+h1, h2, h3, h4, h5 {
+    color: var(--color-white);
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 3rem ;
+    margin: 1rem 0;
+}
+
+h2{
+    font-size: 1.7rem;
+    margin: 1rem 0;
+}
+
+h3{
+    font-size: 1.1rem;
+    margin: 0.8rem 0 0.5rem;
+}
+
+h4{
+    font-size: 1rem;
+}
+
+a{
+    color: var(--color-white);
+    transition: var(--transition);
+}
+
+img{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+/* currently at 45:00 at the first video */
+
+/*======================================== Button ========================================*/
 
 .btn{
     display: inline-block;
@@ -68,7 +117,7 @@ body {
     color: var(--color-white);
 }
 
-/*======================================== Form General========================================*/
+/*======================================== Form General ========================================*/
 .form_section{
     display: grid;
     place-items: center;
@@ -128,7 +177,7 @@ input, textarea, select{
 }
 
 
-/*======================================== Media Queries (small devices)========================================*/
+/*======================================== Media Queries (small devices) ========================================*/
 
 @media screen and (max-width: 600px) {
    
@@ -140,7 +189,7 @@ input, textarea, select{
         font-size: 2rem;
     }
 
-    /*======================================== Form General========================================*/
+    /*======================================== Form General ========================================*/
 
     .form_section-container{
         padding: 0;
