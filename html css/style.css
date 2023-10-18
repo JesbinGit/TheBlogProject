@@ -20,7 +20,7 @@
    
     --container-width-lg: 74%;
     --container-width-md: 88%;
-    --form-width: 50%;
+    --form-width: 40%;                                      /*idk width issues*/
 
     --card-border-radius-1: 0.3rem;
     --card-border-radius-2: 0.5rem;
@@ -41,6 +41,7 @@
     appearance: 0;
     list-style: none;
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 body {
@@ -118,10 +119,31 @@ input, textarea, select{
 }
 
 .form_section small{
-    margin-top: 0rem;
+    margin-top: 1rem;
     display: block;
 }
 
 .form_section small a{
     color: var(--color-primary);
+}
+
+
+/*======================================== Media Queries (small devices)========================================*/
+
+@media screen and (max-width: 600px) {
+   
+    section{
+        margin-top: 2rem;
+    }
+
+    h1{
+        font-size: 2rem;
+    }
+
+    /*======================================== Form General========================================*/
+
+    .form_section-container{
+        padding: 0;
+    }
+    
 }
