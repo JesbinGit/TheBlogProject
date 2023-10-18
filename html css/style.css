@@ -20,7 +20,7 @@
    
     --container-width-lg: 74%;
     --container-width-md: 88%;
-    --form-width: 40%;                                      /*idk width issues*/
+    --form-width: 40%;
 
     --card-border-radius-1: 0.3rem;
     --card-border-radius-2: 0.5rem;
@@ -32,8 +32,7 @@
 }
 
 /* ======= General stuff thats universal so i dont have to repeat =========== */
-* 
-{
+* {
     margin: 0;
     padding: 0;
     outline: 0;
@@ -54,14 +53,14 @@ body {
 
 }
 
-.container{
+.container {
     width: var(--container-width-lg);
     max-width: 1800px;
     margin-inline: auto;
 
 }
 
-section{
+section {
     margin-top: 3rem;
     width: 100vw;
 }
@@ -76,37 +75,114 @@ h1 {
     margin: 1rem 0;
 }
 
-h2{
+h2 {
     font-size: 1.7rem;
     margin: 1rem 0;
 }
 
-h3{
+h3 {
     font-size: 1.1rem;
     margin: 0.8rem 0 0.5rem;
 }
 
-h4{
+h4 {
     font-size: 1rem;
 }
 
-a{
+a {
     color: var(--color-white);
     transition: var(--transition);
 }
 
-img{
+img {
     display: block;
     width: 100%;
     object-fit: cover;
 }
 
+/*======================================== Nav ========================================*/
 
+nav {
+    background: var(--color-primary);
+    width: 100vw;
+    height: 4.5rem;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+nav button {
+    display: none;
+}
+
+.nav_container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.avatar {
+    width: 2.5rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 0.3rem solid var(--color-bg);
+}
+
+.nav_logo {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.nav_items {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.nav_profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.nav_profile ul {
+    position: absolute;
+    top: 125%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.4);
+    background: var(--color-gray-900);
+    visibility: hidden;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+/*======================= Show When Hover =======================*/
+
+.nav_profile:hover >ul {
+    visibility: visible;
+    opacity: 1;
+}
+
+.nav_profile ul li a {
+    padding: 1rem;
+    background: var(--color-gray-900);
+    display: block;
+    width: 100%;
+}
+
+.nav_profile ul li:last-child a {
+    background: var(--color-red);
+    color: var(--color-bg);
+}
 /* currently at 45:00 at the first video */
 
 /*======================================== Button ========================================*/
 
-.btn{
+.btn {
     display: inline-block;
     width: fit-content;
     padding: 0.6rem 1.2rem;
@@ -118,28 +194,28 @@ img{
 }
 
 /*======================================== Form General ========================================*/
-.form_section{
+.form_section {
     display: grid;
     place-items: center;
     height: 100vh;
 }
 
-.form_section-container{
+.form_section-container {
     width: var(--form-width);
 }
 
-.alert_message{
+.alert_message {
     padding: 0.8rem 1.4rem;
     margin-bottom: 1rem;
     border-radius: var(--card-border-radius-2);
 }
 
-.alert_message.error{
+.alert_message.error {
     background: var(--color-red-light);
     color: var(--color-red);
 }
 
-.alert_message.success{
+.alert_message.success {
     background: var(--color-green-light);
     color: var(--color-green);
 }
@@ -147,19 +223,21 @@ img{
 form {
     display: flex;
     flex-direction: column;
+    color: var(--color-white);      /*added post might cause text color Issue*/
     gap: 0.6rem;        /*temp gap modifi [ori->1rem]*/
 }
 
-.form_control{
+.form_control {
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
     /*background: var(--color-gray-900);
     border-radius: var(--card-border-radius-2);
-    padding-left: 0.8rem ;/*not sure [Y/N]*/
+    padding-left: 0.8rem;     
+    padding-top: .5rem;                     /*not sure [Y/N]*/
 }
 
-input, textarea, select{
+input, textarea, select {
     padding: 0.8rem 1.4rem;
     background-color: var(--color-gray-900);
     border-radius: var(--card-border-radius-2);
@@ -167,12 +245,13 @@ input, textarea, select{
     color: var(--color-white);   
 }
 
-.form_section small{
+.form_section small {
     margin-top: 1rem;
     display: block;
+    color: var(--color-white);
 }
 
-.form_section small a{
+.form_section small a {
     color: var(--color-primary);
 }
 
@@ -181,6 +260,8 @@ input, textarea, select{
 
 @media screen and (max-width: 600px) {
    
+    
+
     section{
         margin-top: 2rem;
     }
@@ -189,9 +270,44 @@ input, textarea, select{
         font-size: 2rem;
     }
 
+    /*======================== Main page stuff [Not added yet...] ========================*/
+
+
     /*======================================== Form General ========================================*/
 
-    .form_section-container{
+    .form_section-container {
+        padding: 0;
+    }
+    
+}
+
+/*======================================== Media Queries (Medium devices) ========================================*/
+
+@media screen and (max-width: 1024px) {
+   
+    /*======================== General ========================*/
+   .container {
+    width: var(--container-width-md);
+   }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    h5 {
+        font-size: 0.8rem;
+    }
+
+    /*======================== Nav [Not added yet...] ========================*/
+
+    /*======================================== Form General ========================================*/
+
+    .form_section-container {
         padding: 0;
     }
     
