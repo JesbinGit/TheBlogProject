@@ -245,14 +245,14 @@ nav button {
 }
 .featured__container
 {
-    display:grid;
+    display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 4rem; 
 }
 
 .featured .post_thumbnail{
     height: fit-content;
-    
+
 }
 
 /*======================================== Form General ========================================*/
