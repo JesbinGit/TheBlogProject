@@ -223,14 +223,14 @@ nav button {
 .post:hover .post_thumbnail img
 {
     filter: saturate(0);
-     transition: all 200ms ease;
+     transition: all 500ms ease;
 }
 
-.post_author
+.post__author
 {
     display: flex;
     gap: 1rem;
-    margin-top: 1.2rem;
+    margin-top: 1rem;
 }
 .post__author-avatar
 {
@@ -257,7 +257,7 @@ nav button {
 
 /*======================================== Form General ========================================*/
 .form_section {
-    display: grid;
+    display: grid; 
     place-items: center;
     height: 100vh;
 }
