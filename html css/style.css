@@ -318,7 +318,7 @@ input, textarea, select {
 }
 
 
-/*======================================== Media Queries (small devices) ========================================
+/*======================================== Media Queries (small devices) ======================================== */
 
 @media screen and (max-width: 600px) {
    
@@ -336,7 +336,7 @@ input, textarea, select {
     
 
 
-  ======================================== Form General ========================================
+  /*======================================== Form General ======================================== */
 
     .form_section-container {
         padding: 0;
@@ -344,7 +344,7 @@ input, textarea, select {
     
 }
 
-/*======================================== Media Queries (Medium devices) ========================================
+/*======================================== Media Queries (Medium devices) ======================================== */
 
 @media screen and (max-width: 1024px) {
    
@@ -366,9 +366,7 @@ input, textarea, select {
         font-size: 0.8rem;
     }
 
- ======================== Nav [Not added yet...] =======================
-
- ======================================== Form General =======================================
+ /* ========== Form General ======================================= */
 
     .form_section-container {
         padding: 0;
@@ -376,4 +374,3 @@ input, textarea, select {
     
 }
 
-*/
