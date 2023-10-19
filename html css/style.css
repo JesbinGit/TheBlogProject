@@ -1,5 +1,5 @@
-/* ======== Bunch of variables for easy access ===== ethinte avishyam ella since we using simple schemes */
-
+/* ======== Bunch of variables for easy access so full color control panel evide ind =====  */
+/* ======= General stuff thats universal so i dont have to repeat =========== */
 :root {
     --color-primary: #6f6af8;
     --color-primary-light: hsla(242, 91%, 69%, 0.18);
@@ -31,7 +31,7 @@
 
 }
 
-/* ======= General stuff thats universal so i dont have to repeat =========== */
+
 * {
     margin: 0;
     padding: 0;
