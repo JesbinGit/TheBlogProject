@@ -595,6 +595,19 @@ input, textarea, select {
     line-height: 1.7;
 }
 
+ /*======================================== Category page  ======================================== */
+.category__title
+{
+    height: 8rem;
+    margin-top: 4.5rem;
+    background: var(--color-gray-700);
+    display: grid;
+    place-items: center;
+
+    
+}
+
+
 /*======================================== Media Queries (smalldevices)================================= */
 
 @media screen and (max-width: 600px) {
