@@ -50,7 +50,23 @@
         </div>
         <form action="" enctype="multipart/form-data" >
             <input type="text" placeholder="Title">
-            <textarea rows="4" placeholder="Description"></textarea>
+            <select >
+                <option value="1">Travel</option>
+                <option value="">Art</option>
+                <option value="">Science & Technology</option>
+                <option value="">Sample1</option>
+                <option value="">Sample2</option>
+                <option value="">Sample3</option>
+            </select>
+            <textarea rows="10" placeholder="Body"></textarea>
+            <div class="form_control inline">
+                <label for="is_featured">Featured</label>
+                <input type="checkbox" id="is_featured" checked>
+            </div>
+            <div class="form_control">
+                <label for="thumbnail">Add Thumbnail</label>
+                <input type="file" id="thumbnail">
+            </div>
             <button type="submit" class="btn">Post</button>
          </form>
     </div>
