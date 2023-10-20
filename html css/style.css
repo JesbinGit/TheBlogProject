@@ -361,6 +361,42 @@ footer ul a:hover{
     border-top: 2px solid var(--color-bg);
     margin-top: 4rem;
 }
+/*======================================== Search button ========================================*/
+.search__bar-container{
+    
+    margin-top: 6rem;
+}
+.search__bar-container
+{
+    
+    width: 30rem;
+    background:var(--color-gray-900);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 0.6rem 1rem;
+    border-radius: var(--card-border-radius-3);
+    color: var(--color-gray-300);
+
+    
+
+}
+.search__bar-container>div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+.search__bar input{
+    margin-left: 0.7rem;
+    padding: 0.5rem 0;
+    width:100%;
+
+
+}
+
  
 
 /*======================================== Form General ========================================*/
@@ -498,4 +534,8 @@ input, textarea, select {
     }
     
 }
+
+/* ====== Skipped the nav bar for small devices cause athukond enna kankana ====*/
+
+
 
