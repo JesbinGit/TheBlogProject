@@ -579,8 +579,9 @@ input, textarea, select {
 .singlepost__container
 {
     width: 75%;
-    background: var(--color-gray-700);
+   /* background: var(--color-gray-700); */
     padding: 1rem 2rem 2rem;
+    background: transparent;
 
 }
 .singlepost__thumbnail
