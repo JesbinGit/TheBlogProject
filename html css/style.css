@@ -203,15 +203,26 @@ nav button {
 
 .btn {
     display: inline-block;
-    width: fit-content;
+    width:fit-content;
     padding: 0.6rem 1.2rem;
     background-color: var(--color-primary);
     border-radius: var(--card-border-radius-2);
     cursor: pointer;
     transition: var(--transition);
     color: var(--color-white);
+    margin-left: auto;
+    margin-right: auto;
+   
 }
-/*======================================== general post styles ========================================*/
+/*=============================== Alreay have one center =============================*/
+.dont_question
+{
+  
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*=============================== general post styles =============================*/
 
 .post_thumbnail
 {
@@ -361,6 +372,7 @@ footer ul a:hover{
 
 .form_section-container {
     width: var(--form-width);
+    text-align: center;
 }
 
 .alert_message {
