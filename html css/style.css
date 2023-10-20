@@ -317,11 +317,16 @@ form {
 .form_control {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 0.6rem;
     /*background: var(--color-gray-900);
     border-radius: var(--card-border-radius-2);
     padding-left: 0.8rem;     
     padding-top: .5rem;                     /*not sure [Y/N]*/
+}
+
+.form_control.inline {
+    flex-direction: row;
+    align-items: center;
 }
 
 input, textarea, select {
@@ -340,6 +345,17 @@ input, textarea, select {
 
 .form_section small a {
     color: var(--color-primary);
+}
+
+.signup_bar {                       /* Added to keep sign in message in the screen < remove if too ugly> */
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;                          
+}
+
+ .form_section .signup_bar small {  /* ^ added to make the above .signup_bar class work < remove > */
+    margin: 0;
+    padding: 0.5rem;
 }
 
 

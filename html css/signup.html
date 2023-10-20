@@ -20,7 +20,7 @@
         <div class="alert_message success">
             <p>This is a error message</p>
         </div>
-        <form action="">
+        <form action="" enctype="multipart/form-data" >
             <input type="text" placeholder="First name">
             <input type="text" placeholder="Last name">
             <input type="text" placeholder="User name">
@@ -32,8 +32,10 @@
                 <label for="avatar">User Avatar</label>
                 <input type="file" id="avatar">
             </div>
-            <button type="submit" class="btn">Sign Up</button>
-            <small>Already have an Account? <a href="signin.html">Sign In</a></small>
+            <div class="signup_bar">
+                <button type="submit" class="btn">Sign Up</button>
+                <small>Already have an Account? <a href="signin.html">Sign In</a></small>
+            </div>
          </form>
     </div>
 </section>
