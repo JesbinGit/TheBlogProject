@@ -325,6 +325,17 @@ input, textarea, select {
     color: var(--color-primary);
 }
 
+.signup_bar {                       /* Added to keep sign in message in the screen < remove if too ugly> */
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;                          
+}
+
+ .form_section .signup_bar small {  /* ^ added to make the above .signup_bar class work < remove > */
+    margin: 0;
+    padding: 0.5rem;
+}
+
 
 /*======================================== Media Queries smalldevices================================= */
 
