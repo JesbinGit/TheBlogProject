@@ -181,7 +181,7 @@ nav button {
     color: var(--color-bg);
 }
 /* currently at 45:00 at the first video --> misinformation  */
-/*======================================== featured article stuff ========================================*/
+/*=========================== featured article stuff==================================*/
 .category__button
     {
         background: var(--color-primary-light);
@@ -372,7 +372,7 @@ footer ul a:hover{
 
 .form_section-container {
     width: var(--form-width);
-    text-align: center;
+   
 }
 
 .alert_message {
