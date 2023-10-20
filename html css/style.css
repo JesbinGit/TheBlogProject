@@ -569,6 +569,30 @@ input, textarea, select {
     transition: var(--transition);
 }
 
+/*========================================Single Post============================== */
+
+.singlepost
+{
+    margin : 6rem 0 2rem;
+}
+
+.singlepost__container
+{
+    width: 75%;
+    background: var(--color-gray-700);
+    padding: 1rem 2rem 2rem;
+
+}
+.singlepost__thumbnail
+{
+   margin: 2rem 0 2rem;
+   
+}
+
+.singlepost__container {
+    margin-top: 1rem;
+    line-height: 1.7;
+}
 
 /*======================================== Media Queries (smalldevices)================================= */
 
@@ -635,6 +659,8 @@ input, textarea, select {
     }
 
 }
+
+
 
 /*======================================== Media Queries (Medium devices) ============================== */
 
