@@ -153,7 +153,7 @@ nav button {
 .nav_profile ul {
     position: absolute;
     top: 125%;
-    right: 0;
+    right: -2.5rem;
     display: flex;
     flex-direction: column;
     box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.4);
@@ -182,7 +182,7 @@ nav button {
     color: var(--color-bg);
 }
 /* currently at 45:00 at the first video --> misinformation  */
-/*======================================== featured article stuff ========================================*/
+/*=========================== featured article stuff==================================*/
 .category__button
     {
         background: var(--color-primary-light);
@@ -204,13 +204,16 @@ nav button {
 
 .btn {
     display: inline-block;
-    width: fit-content;
+    width:fit-content;
     padding: 0.6rem 1.2rem;
     background-color: var(--color-primary);
     border-radius: var(--card-border-radius-2);
     cursor: pointer;
     transition: var(--transition);
     color: var(--color-white);
+    margin-left: auto;
+    margin-right: auto;
+   
 }
 
 .btn.sm {
@@ -231,19 +234,27 @@ nav button {
     background-color: var(--color-red-neon);
     color: var(--color-bg);
 }
-/*======================================== general post styles ========================================*/
+/*=============================== Alreay have one center =============================*/
+.dont_question
+{
+  
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*=============================== general post styles =============================*/
 
 .post_thumbnail
 {
-    border-radius: var(--card-border-radius-5);
-    border: 1rem solid var(--color-gray-900);
+    border-radius: var(--card-border-radius-4);
+    border: 0.5rem solid var(--color-gray-900);
     overflow: hidden;
     margin-bottom: 1.6rem;
 }
 .post:hover .post_thumbnail img
 {
     filter: saturate(0);
-     transition: all 500ms ease;
+    transition: all 300ms ease;
 }
 
 .post__author
@@ -282,6 +293,95 @@ nav button {
     gap: var(--card-border-radius-5);
     margin-bottom: 5rem;
 }
+/*======================================== Category Buttons========================================*/
+.category__buttons
+{
+    padding:  3rem 0;
+    border-top: 2px solid var(--color-gray-900);
+    border-bottom: 2px solid var(--color-gray-900);
+}
+
+.category__button-container
+{
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr );
+    gap :1rem;
+}
+/*======================================== Footer  ========================================*/
+footer 
+{
+    background-color: var(--color-gray-700);
+    padding: 5rem 0 0;
+    box-shadow: inset 0 1.5rem 1,5rem rgba(0, 0, 0, 0.2);
+}
+
+.footer__socials
+{
+    margin-inline: auto;
+    width: fit-content;
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap :1.5rem ;
+}
+
+.footer__socials a
+{
+    background: var(--color-bg);
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.footer__socials a:hover
+{
+    background-color: var(--color-white);
+    color: var(--color-bg);
+    
+}
+
+/*======================================== Footer text ========================================*/
+.footer__container
+{
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    text-align: center;
+
+}
+
+footer h4{
+    color: var(--color-white);
+    margin-bottom: 0.6rem;
+
+}
+footer ul li{
+    padding: 0.4rem 0 0 ;
+}
+
+footer ul a{
+    opacity: 0.6;
+
+}
+
+footer ul a:hover{
+    letter-spacing: 0.1rem;
+    opacity: 1;
+}
+
+.footer__copyright
+{
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 2px solid var(--color-bg);
+    margin-top: 4rem;
+}
+ 
 
 /*======================================== Form General ========================================*/
 .form_section {
@@ -292,6 +392,7 @@ nav button {
 
 .form_section-container {
     width: var(--form-width);
+   
 }
 
 .alert_message {
