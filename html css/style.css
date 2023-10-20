@@ -211,8 +211,8 @@ nav button {
     cursor: pointer;
     transition: var(--transition);
     color: var(--color-white);
-    margin-left: auto;
-    margin-right: auto;
+    /*margin-left: auto;          
+    margin-right: auto;*/
    
 }
 
@@ -234,10 +234,8 @@ nav button {
     background-color: var(--color-red-neon);
     color: var(--color-bg);
 }
-/*=============================== Alreay have one center =============================*/
-.dont_question
-{
-  
+
+.btn.center {
     margin-left: auto;
     margin-right: auto;
 }
