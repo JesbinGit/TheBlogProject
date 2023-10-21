@@ -152,7 +152,7 @@ nav button {
 
 .nav_profile ul {
     position: absolute;
-    top: 125%;
+    top: 140%;
     right: -2.5rem;
     display: flex;
     flex-direction: column;
