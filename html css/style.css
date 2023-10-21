@@ -621,16 +621,49 @@ input, textarea, select {
    
     
 
-    section{
+    section {
         margin-top: 2rem;
     }
 
-    h1{
+    h1 {
         font-size: 2rem;
     }
 
-  
+    .featured {
+        margin-top: 6rem;
+
+    }
+
+    .featured__container {
+        grid-template-columns: 1fr;
+    }
+
+    .post__container {
+        grid-template-columns: 1fr;
+    }
+
+    .category__button-container {
+        grid-template-columns: 1fr 1fr;        
+    }
+
+    .footer__container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+  /*======================================== Blog ======================================== */
     
+  .search__bar-container {
+    width: var(--container-width-md);
+  }
+  
+  /*======================================== Single Post ======================================== */
+    
+  .singlepost__container {
+    background-color: transparent;
+    padding: 0;
+  }
 
 
   /*======================================== Form General ======================================== */
