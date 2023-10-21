@@ -677,7 +677,19 @@ input, textarea, select {
         width: 2.5rem;
         height: 2.5rem;
         border-radius: 50% 0 0 50%;
+        font-size: 1.3rem;
+        cursor: pointer;
+        box-shadow: -1rem 0 2rem rgba(0, 0, 0, 0.4);
     }
+
+    .dashboard aside a h5 {
+        display: inline-block;
+    }
+
+    #hide_sidebar-btn {
+        display: none;
+    }
+
 
 }
 
