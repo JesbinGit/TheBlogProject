@@ -689,8 +689,14 @@ input, textarea, select {
     .dashboard main h2 {
         margin-top: 1rem;
     }
+    
+    /*added because lazy*/
+    
+    .dashboard aside h5 {
+        display: none;
+    }
 
-    .dashboard aside {
+    /*.dashboard aside {
         position: fixed;
         box-shadow: 2rem 0 4rem rgba(0,0,0,0.4);
         left: -100%;
@@ -717,7 +723,7 @@ input, textarea, select {
 
     .dashboard aside a h5 {
         display: inline-block;
-    }
+    }*/
 
     #hide_sidebar-btn {
         display: none;
@@ -750,10 +756,41 @@ input, textarea, select {
         font-size: 0.8rem;
     }
 
+ /* =============================================== Nav Button ======================================= */
+        /*nav button {
+            display: inline-block;
+            font-size: 1.5rem;
+            background: transparent;
+            color: var(--color-white);
+            cursor: pointer;
+        }*/
+
+ /* ===============================================  ======================================= */
+
+
+ /* =============================================== Blog ======================================= */
+        .search__bar-container {
+            width: 60%;
+        }
+
+        .featured__container {
+            gap : 3rem;
+        }
+
+        .post__container {
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer__container {
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
  /* =============================================== Form General ======================================= */
 
     .form_section-container {
-        padding: 0;
+        padding: 3rem;
     }
     
  /* =============================================== DashBoard ======================================= */
