@@ -306,6 +306,15 @@ nav button {
     grid-template-columns: repeat(3 , 1fr );
     gap :1rem;
 }
+
+/*======================================== Empty Page ========================================*/
+
+.empty_page {
+    height: 70vh;
+    display: grid;
+    place-content: center;
+}
+
 /*======================================== Footer  ========================================*/
 footer 
 {
