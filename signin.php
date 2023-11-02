@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Website</title>
    
-    <link rel = "stylesheet" href="style.css">
+    <link rel = "stylesheet" href=./css/style.css>
     <!--Icon Scout cdn for icons like the three lines or unicons-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <!--this is from google fonts-->
