@@ -18,20 +18,20 @@
 <body>
     <nav>
         <div class = "container nav_container">
-            <a href="index.php" class="nav_logo"> The Blog Project </a>
+            <a href="<?= ROOT_URL?>" class="nav_logo"> The Blog Project </a>
             <ul class ="nav_items">
-                <li><a href = "blog.php"> Blog  </a> </li>
-                <li><a href = "ourstory.php"> Our Story </a> </li>
-                <li><a href = "contact.php"> Contact Us </a> </li>
-                <li><a href = "signin.php"> Sign in  </a> </li>
+                <li><a href = "<?= ROOT_URL?>blog.php"> Blog  </a> </li>
+                <li><a href = "<?= ROOT_URL?>ourstory.php"> Our Story </a> </li>
+                <li><a href = "<?= ROOT_URL?>contact.php"> Contact Us </a> </li>
+                <li><a href = "<?= ROOT_URL?>signin.php"> Sign in  </a> </li>
                 
                 <li class ="nav_profile"> 
                     <div class ="avatar">
                         <img src="/images/jisoo.jpg">
                     </div>
                     <ul>
-                        <li> <a = href="dashboard.php"> Dashboard </a> </li>
-                        <li> <a = href="logout.php"> Logout </a> </li>
+                        <li> <a href="<?= ROOT_URL?>admin/dashboard.php"> Dashboard </a> </li>
+                        <li> <a href="<?= ROOT_URL?>logout.php"> Logout </a> </li>
 
                     </ul>
 
