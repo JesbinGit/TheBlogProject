@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Website</title>
    
-    <link rel = "stylesheet" href="./style.css">
+    <link rel = "stylesheet" href="./css/style.css">
     <!--Icon Scout cdn for icons like the three lines or unicons-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <!--this is from google fonts-->
@@ -14,20 +14,20 @@
 <body>
     <nav>
         <div class = "container nav_container">
-            <a href="index.html" class="nav_logo"> The Blog Project </a>
+            <a href="index.php" class="nav_logo"> The Blog Project </a>
             <ul class ="nav_items">
-                <li><a href = "blog.html"> Blog  </a> </li>
-                <li><a href = "ourstory.html"> Our Story </a> </li>
-                <li><a href = "contact.html"> Contact Us </a> </li>
-                <li><a href = "signin.html"> Sign in  </a> </li>
+                <li><a href = "blog.php"> Blog  </a> </li>
+                <li><a href = "ourstory.php"> Our Story </a> </li>
+                <li><a href = "contact.php"> Contact Us </a> </li>
+                <li><a href = "signin.php"> Sign in  </a> </li>
                 
                 <li class ="nav_profile"> 
                     <div class ="avatar">
                         <img src="/images/jisoo.jpg">
                     </div>
                     <ul>
-                        <li> <a = href="dashboard.html"> Dashboard </a> </li>
-                        <li> <a = href="logout.html"> Logout </a> </li>
+                        <li> <a = href="dashboard.php"> Dashboard </a> </li>
+                        <li> <a = href="logout.php"> Logout </a> </li>
 
                     </ul>
 
@@ -50,8 +50,8 @@
             <img src = "/images/b1.jpg">
           </div> 
           <div class="page__info">
-            <a href="category-post.html" class="category__button"> Wild Life</a>
-            <h2 class="post__title"> <a href="post.html"> Random filler text title </a></h2>
+            <a href="category-post.php" class="category__button"> Wild Life</a>
+            <h2 class="post__title"> <a href="post.php"> Random filler text title </a></h2>
             <p class="post_body"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, cumque? Delectus, atque reiciendis doloremque earum illo error enim quo non eligendi magni natus obcaecati id doloribus hic quisquam quaerat adipisci?
 
             </p>
@@ -79,8 +79,8 @@
             </div>
             
             <div class="post__info">
-                <a href="category-post.html" class="category__button"> Art </a>
-                <h3 class="post__title"><a href="post.html">Randome post title 2</a> </h3>
+                <a href="category-post.php" class="category__button"> Art </a>
+                <h3 class="post__title"><a href="post.php">Randome post title 2</a> </h3>
                 <p class="post_body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias natus iste explicabo ad corporis totam ipsam! Dignissimos culpa eius excepturi ut necessitatibus totam deleniti. Alias molestiae ea sapiente sunt inventore.     
                 </p>
                 <div class="post__author">
@@ -102,7 +102,7 @@
                 
                 <div class="post__info">
                     <a href=""class="category__button"> Art </a>
-                    <h3 class="post__title"><a href="post.html">Randome post title 2</a> </h3>
+                    <h3 class="post__title"><a href="post.php">Randome post title 2</a> </h3>
                     <p class="post_body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias natus iste explicabo ad corporis totam ipsam! Dignissimos culpa eius excepturi ut necessitatibus totam deleniti. Alias molestiae ea sapiente sunt inventore.     
                     </p>
                     <div class="post__author">
@@ -124,7 +124,7 @@
                 
                 <div class="post__info">
                     <a href=""class="category__button"> Art </a>
-                    <h3 class="post__title"><a href="post.html">Randome post title 2</a> </h3>
+                    <h3 class="post__title"><a href="post.php">Randome post title 2</a> </h3>
                     <p class="post_body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias natus iste explicabo ad corporis totam ipsam! Dignissimos culpa eius excepturi ut necessitatibus totam deleniti. Alias molestiae ea sapiente sunt inventore.     
                     </p>
                     <div class="post__author">
@@ -146,7 +146,7 @@
                     
                     <div class="post__info">
                         <a href=""class="category__button"> Art </a>
-                        <h3 class="post__title"><a href="post.html">Randome post title 2</a> </h3>
+                        <h3 class="post__title"><a href="post.php">Randome post title 2</a> </h3>
                         <p class="post_body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias natus iste explicabo ad corporis totam ipsam! Dignissimos culpa eius excepturi ut necessitatibus totam deleniti. Alias molestiae ea sapiente sunt inventore.     
                         </p>
                         <div class="post__author">

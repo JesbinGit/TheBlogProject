@@ -14,18 +14,18 @@
 <body>
     <nav>
         <div class = "container nav_container">
-            <a href="index.html" class="nav_logo"> The Blog Project </a>
+            <a href="index.php" class="nav_logo"> The Blog Project </a>
             <ul class ="nav_items">
-                <li><a href = "ourstory.html"> Our Story </a> </li>
-                <li><a href = "contact.html"> Contact Us </a> </li>
-                <li><a href = "signin.html"> Sign in  </a> </li>
+                <li><a href = "ourstory.php"> Our Story </a> </li>
+                <li><a href = "contact.php"> Contact Us </a> </li>
+                <li><a href = "signin.php"> Sign in  </a> </li>
                 <li class ="nav_profile"> 
                     <div class ="avatar">
                         <img src="/images/jisoo.jpg">
                     </div>
                     <ul>
-                        <li> <a = href="dashboard.html"> Dashboard </a> </li>
-                        <li> <a = href="logout.html"> Logout </a> </li>
+                        <li> <a = href="dashboard.php"> Dashboard </a> </li>
+                        <li> <a = href="logout.php"> Logout </a> </li>
 
                     </ul>
 

@@ -1,6 +1,6 @@
 
 
-/*js for small devices-> manage-________.html*/
+/*js for small devices-> manage-________.php*/
 
 const sidebar =document.querySelector('aside');
 const showSidebarBtn =document.querySelector('#show_sidebar-btn');
