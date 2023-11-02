@@ -1,3 +1,3 @@
 <?php
-    require 'constants.php';
+    require 'config/constants.php';
 ?>
