@@ -43,8 +43,7 @@
     </nav>
 
     <header class = "category__title">
-        <h2> Category <Title></Title></h2>
-        </h2>
+        <h2> Category</h2>
     </header>
 
 
