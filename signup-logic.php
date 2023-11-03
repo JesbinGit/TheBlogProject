@@ -1,29 +1,42 @@
 <?php
- require 'config/database.php';
+session_start(); // Initialize the session
 
- //get signup data
+require 'config/database.php';
 
- if(isset($_POST['submit'])){
-      //filtervar - ee email , numbers and shit validate cheyan to check  the  format of the data and remove unnecassary parts. or so i read.
-      
-      //FILTER_SANITIZE_SPECIAL_CHARS will leave the tags in place but turn the <> characters into &lt; and &gt;. FILTER_SANITIZE_STRING will strip the tags out leaving the just text inside the tags. no idea why its here(yet).
-
+if (isset($_POST['submit'])) {
     $firstname = filter_var($_POST['firstname'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $lastname  = filter_var($_POST['lastname'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $username = filter_var($_POST['username'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
-    $createpassword = filter_var($_POST['createpassword'],FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $createpassword = filter_var($_POST['createpassword'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $confirmpassword = filter_var($_POST['confirmpassword'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $avatar = $_FILES['avatar'];
-    echo  $firstname ,  $firstname , $username , $email , $confirmpassword ;
 
- }
- else {
-    //if signup button not clicked, bounce back to signup page
-    header('location: '. ROOT_URL .'signup.php');
+    // Validate input values
+    if (empty($firstname)) {
+        $_SESSION['signup'] = "Please enter your First name";
+    } else if (empty($lastname)) {
+        $_SESSION['signup'] = "Please enter your Last name";
+    } else if (empty($username)) {
+        $_SESSION['signup'] = "Please enter your User name";
+    } else if (empty($email)) {
+        $_SESSION['signup'] = "Please enter a valid Email address";
+    } else if (strlen($createpassword) < 8 || strlen($confirmpassword) < 8) {
+        $_SESSION['signup'] = "Password should be more than 8 characters";
+    } else if (empty($avatar['name'])) {
+        $_SESSION['signup'] = "Please add an avatar";
+    } else if ($createpassword !== $confirmpassword) {
+        $_SESSION['signup'] = "Passwords don't match";
+    } else {
+        // Hash the password
+        $hashed_password = password_hash($createpassword, PASSWORD_DEFAULT);
+        echo "Password: " . $createpassword . "<br>";
+        echo "Hashed Password: " . $hashed_password;
+    }
+} else {
+    // If the signup button is not clicked, redirect to the signup page
+    header('location: ' . ROOT_URL . 'signup.php');
     die();
-; }
-
-
+}
 
 ?>
