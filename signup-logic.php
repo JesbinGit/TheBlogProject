@@ -37,6 +37,6 @@ if (isset($_POST['submit'])) {
     // If the signup button is not clicked, redirect to the signup page
     header('location: ' . ROOT_URL . 'signup.php');
     die();
-}
 
-?>
+    //couldnt find some small error for an hour so just rewrote the code .
+}
