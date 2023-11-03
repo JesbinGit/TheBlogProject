@@ -1,3 +1,7 @@
+<?php 
+require 'config/constants.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,21 +23,21 @@
         <h2>Join TheBlogProject</h2>
         <div class="alert_message success">
             <p>This is a error message</p>
-        </div>
-        <form action="" enctype="multipart/form-data" >
-            <input type="text" placeholder="First name">
-            <input type="text" placeholder="Last name">
-            <input type="text" placeholder="User name">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Create Password">
-            <input type="password" placeholder="Confirm Password">
+        </div> 
+        <form  action="<?= ROOT_URL ?>signup-logic.php" enctype="multipart/form-data" method= "POST" >
+            <input type="text" name ="firstname" placeholder="First name">
+            <input type="text" name ="lastname" placeholder="Last name">
+            <input type="text" name ="username" placeholder="User name">
+            <input type="email" name ="email" placeholder="Email">
+            <input type="password" name ="createpassword" placeholder="Create Password">
+            <input type="password" name ="confirmpassword" placeholder="Confirm Password">
         
             <div class="form_control">
                 <label for="avatar">User Avatar</label>
-                <input type="file" id="avatar">
+                <input type="file" name="avatar" id="avatar">
             </div>
             <div class="signup_bar">
-                <button type="submit" class="btn">Sign Up</button>
+                <button type="submit" name="submit" class="btn">Sign Up</button>
             <small>Already have an Account? <a href="signin.php">Sign In!</a></small>
                 
             </div>
