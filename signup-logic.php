@@ -51,7 +51,7 @@ if (isset($_POST['submit'])) {
             $avatar_tmp_name = $avatar['tmp_name'];
             $avatar_destination_path = 'images/' . $avatar_name;
             //id code that is unique
-            $idcode = rand();
+            $idcode = rand(0 , 9999);
             $idname = $idcode;
 
             //validating avatar
