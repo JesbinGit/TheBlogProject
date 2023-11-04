@@ -30,13 +30,27 @@ if (isset($_POST['submit'])) {
     } else {
         // Hash the password
         $hashed_password = password_hash($createpassword, PASSWORD_DEFAULT);
-        echo "Password: " . $createpassword . "<br>";
-        echo "Hashed Password: " . $hashed_password;
-    }
+         //couldnt find some small error for an hour so just rewrote the code upto here.
+
+         //check whether the username or email already exit in database
+
+         $user_check_query = "SELECT * FROM users WHERE userename = '$username' OR email ='$email'";
+         $user_check_result = mysqli_query($connection, $user_check_query);
+         if(mysqli_num_rows($user_check_result) > 0) {
+            $_SESSION['signup'] = "User already exist";
+         }
+         else{
+            //work on avatar
+            
+         }
+
+    
+
+    
 } else {
     // If the signup button is not clicked, redirect to the signup page
     header('location: ' . ROOT_URL . 'signup.php');
     die();
 
-    //couldnt find some small error for an hour so just rewrote the code .
+   
 }
