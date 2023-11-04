@@ -1,6 +1,11 @@
 <?php 
 
 require 'config/constants.php';
+
+$username_email = $_SESSION['sigin-data']['username_email'] ?? null;
+$username_email = $_SESSION['sigin-data']['password'] ?? null;
+
+unset($_SESSION['sigin-data']);
 ?>
 
 
@@ -31,10 +36,10 @@ require 'config/constants.php';
         </div>
         <?php endif; ?>
 
-        <form action="" enctype="multipart/form-data" >
-            <input type="text" placeholder="Username or Email">
-            <input type="password" placeholder="Password">
-            <button type="submit" class="btn center">Sign In</button>
+        <form action="<?= ROOT_URL ?> signin-logic.php"method="POST" enctype="multipart/form-data" >
+            <input type="text" name ="username_email" value = <?= $username_email ?> placeholder="Username or Email">
+            <input type="password" name = "password"  <?= $password ?> placeholder="Password">
+            <button type="submit" name="submit" class="btn center">Sign In</button>
             <small >Don't have an Account? <a href="signup.php">Sign Up!</a></small>
          </form>
     </div>
