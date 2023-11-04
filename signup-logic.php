@@ -1,12 +1,11 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
 session_start(); // Initialize the session
 
 require 'config/database.php';
-define('ROOT_URL','http://localhost/blog/TheBlogProject/'); 
+//$connection = mysqli_connect('localhost','myblog','admin123','db_blog');
+
 
 if (isset($_POST['submit'])) {
     $firstname = filter_var($_POST['firstname'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -69,18 +68,23 @@ if (isset($_POST['submit'])) {
         }   
         //redirect back to signup page incase of signup
 
-        if($_SESSION['signup']) {
+        if(isset($_SESSION['signup'])) {
+            // pass data back to signup page to avoid annoying ass retyping shii
+            
+            $_SESSION['signup-data'] = $_POST;
             header('location: ' . ROOT_URL . 'signup.php');
             die();
         }
         else{
             //insert user into table
             $insert_user_query = "INSERT INTO tb_users (firstname , lastname , username , email , password , avatar , is_admin) VALUES ('$firstname','$lastname', '$username', '$email', '$hashedpassword', '$avatar_name', 0 )";
+
+            $insert_user_result = mysqli_query($connection, $insert_user_query);
             
             
             if(!mysqli_errno($connection)){
                 $_SESSION['signup-sucess'] = "Registration successful. Please log in.";
-                header('location: ' . ROOT_URL . 'sigin.php');
+                header('location: ' . ROOT_URL . 'signin.php');
                 die();
             }
         }
