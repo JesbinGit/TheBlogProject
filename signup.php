@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require 'config/constants.php';
 
 // get back form data in case of error  (ill rage quit if i have to retype over and over again)

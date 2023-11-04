@@ -1,7 +1,7 @@
 <?php
 
 
-session_start(); // Initialize the session
+
 
 require 'config/database.php';
 
@@ -50,6 +50,9 @@ if (isset($_POST['submit'])) {
             $avatar_name = $time . $avatar['name'];
             $avatar_tmp_name = $avatar['tmp_name'];
             $avatar_destination_path = 'images/' . $avatar_name;
+            //id code that is unique
+            $idcode = rand();
+            $idname = $idcode;
 
             //validating avatar
             $allowed_files = ['png','jpg','jpeg'];
@@ -76,7 +79,7 @@ if (isset($_POST['submit'])) {
         }
         else{
             //insert user into table
-            $insert_user_query = "INSERT INTO tb_users (firstname , lastname , username , email , password , avatar , is_admin) VALUES ('$firstname','$lastname', '$username', '$email', '$hashed_password', '$avatar_name', 0 )";
+            $insert_user_query = "INSERT INTO tb_users (id , firstname , lastname , username , email , password , avatar , is_admin) VALUES ('$idname', '$firstname','$lastname', '$username', '$email', '$hashed_password', '$avatar_name', 0 )";
 
             $insert_user_result = mysqli_query($connection, $insert_user_query);
             
