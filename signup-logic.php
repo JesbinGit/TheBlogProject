@@ -1,12 +1,10 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
 session_start(); // Initialize the session
 
 require 'config/database.php';
-define('ROOT_URL','http://localhost/blog/TheBlogProject/'); 
+
 
 if (isset($_POST['submit'])) {
     $firstname = filter_var($_POST['firstname'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -78,7 +76,7 @@ if (isset($_POST['submit'])) {
         }
         else{
             //insert user into table
-            $insert_user_query = "INSERT INTO tb_users (firstname , lastname , username , email , password , avatar , is_admin) VALUES ('$firstname','$lastname', '$username', '$email', '$hashedpassword', '$avatar_name', 0 )";
+            $insert_user_query = "INSERT INTO tb_users (firstname , lastname , username , email , password , avatar , is_admin) VALUES ('$firstname','$lastname', '$username', '$email', '$hashed_password', '$avatar_name', 0 )";
 
             $insert_user_result = mysqli_query($connection, $insert_user_query);
             
