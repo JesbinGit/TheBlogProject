@@ -1,12 +1,11 @@
 <?php
-
+require 'config/database.php';
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 session_start(); // Initialize the session
 
-require 'config/database.php';
-define('ROOT_URL','http://localhost/blog/TheBlogProject/'); 
+//define('ROOT_URL','http://localhost/blog/TheBlogProject/');  commented out due error issue
 
 if (isset($_POST['submit'])) {
     $firstname = filter_var($_POST['firstname'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
