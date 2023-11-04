@@ -34,11 +34,22 @@ unset($_SESSION['sigin-data']);
             unset($_SESSION['signup-success']);
              ?>
         </div>
-        <?php endif; ?>
+        <?php elseif(isset($_SESSION['signin'])) : ?>
+        <div class="container form_section-container">
+        <h2>Sign In</h2>
+       <?php if(isset($_SESSION['sigin'])): ?>
+        <div class="alert_message success">
+            <?= $_SESSION['signin'];
+            unset($_SESSION['siginin']);
+             ?>
+        </div>
+        <?php endif ?>
+        
+        
 
-        <form action="<?= ROOT_URL ?> signin-logic.php"method="POST" enctype="multipart/form-data" >
-            <input type="text" name ="username_email" value = <?= $username_email ?> placeholder="Username or Email">
-            <input type="password" name = "password"  <?= $password ?> placeholder="Password">
+        <form action="<?= ROOT_URL ?>signin-logic.php" method="POST" enctype="multipart/form-data" >
+            <input type="text" name ="username_email" value = "<?= $username_email ?>" placeholder="Username or Email">
+            <input type="password" name = "password"  value = "<?= $password ?> " placeholder="Password">
             <button type="submit" name="submit" class="btn center">Sign In</button>
             <small >Don't have an Account? <a href="signup.php">Sign Up!</a></small>
          </form>
