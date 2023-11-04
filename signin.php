@@ -23,9 +23,14 @@ require 'config/constants.php';
 <section class="form_section">
     <div class="container form_section-container">
         <h2>Sign In</h2>
+       <?php if(isset($_SESSION['signup-success'])): ?>
         <div class="alert_message success">
-            <p>This is a Success meassage</p>
+            <?= $_SESSION['signup-success'];
+            unset($_SESSION['signup-success']);
+             ?>
         </div>
+        <?php endif; ?>
+
         <form action="" enctype="multipart/form-data" >
             <input type="text" placeholder="Username or Email">
             <input type="password" placeholder="Password">
