@@ -1,11 +1,12 @@
 <?php
 
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 session_start(); // Initialize the session
 
 require 'config/database.php';
-//$connection = mysqli_connect('localhost','myblog','admin123','db_blog');
-
+define('ROOT_URL','http://localhost/blog/TheBlogProject/'); 
 
 if (isset($_POST['submit'])) {
     $firstname = filter_var($_POST['firstname'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
