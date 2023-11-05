@@ -1,5 +1,6 @@
 <?php
 require 'config/constants.php';
+
 $connection = mysqli_connect('localhost','theblog','admin123','db_blog');
 
 if(isset($_POST['submit']))
