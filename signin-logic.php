@@ -60,7 +60,7 @@ if(isset($_SESSION['signin'])) {
 }
 
 else {
-    header('location:'. ROOT_URL . 'sigin.php');
+    header('location:'. ROOT_URL . 'index.php');
 }
 
 ?>
