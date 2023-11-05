@@ -3,7 +3,7 @@
 require 'config/constants.php';
 
 $username_email = $_SESSION['sigin-data']['username_email'] ?? null;
-$username_email = $_SESSION['sigin-data']['password'] ?? null;
+$password = $_SESSION['sigin-data']['password'] ?? null;
 
 unset($_SESSION['sigin-data']);
 ?>
@@ -34,16 +34,16 @@ unset($_SESSION['sigin-data']);
             unset($_SESSION['signup-success']);
              ?>
         </div>
-        <?php elseif(isset($_SESSION['signin'])) : ?>
-        <div class="container form_section-container">
-        <h2>Sign In</h2>
-       <?php if(isset($_SESSION['sigin'])): ?>
+        <?php elseif (isset($_SESSION['signin'])) : ?>
+        
+       
+       <?php if(isset($_SESSION['signin'])): ?>
         <div class="alert_message success">
             <?= $_SESSION['signin'];
-            unset($_SESSION['siginin']);
+            unset($_SESSION['signin']);
              ?>
         </div>
-        <?php endif ?>
+        <?php endif ?> <?php endif ?>
         
         
 

@@ -1,5 +1,6 @@
 <?php
 require 'config/constants.php';
+$connection = mysqli_connect('localhost','theblog','admin123','db_blog');
 
 if(isset($_POST['submit']))
 {
@@ -13,7 +14,7 @@ if(isset($_POST['submit']))
     }
     elseif(empty($password))
     {
-        $_SESSION['sigin'] = "Please enter a password";
+        $_SESSION['signin'] = "Please enter a password";
     }
     else {
         //fetch user from database
@@ -35,7 +36,7 @@ if(isset($_POST['submit']))
                     $_SESSION['user_is_admin'] = true;
                  }
                  // log user in 
-                 header('location:' . ROOT_URL .'admin/');
+                 header('location:' . ROOT_URL .'index.php');
             }
             else 
             {
@@ -55,7 +56,7 @@ if(isset($_POST['submit']))
 //if any other problem , redirect back to login page
 if(isset($_SESSION['signin'])) {
     $_SESSION['sigin-data'] = $_POST;
-    header('location: '. ROOT_URL . 'siginin.php');
+    header('location: '. ROOT_URL . 'signin.php');
 }
 
 else {
