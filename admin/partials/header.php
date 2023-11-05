@@ -1,5 +1,12 @@
 <?php 
     require 'config/database.php';
+    if(isset($_SESSION['user_id'])) {
+        $id = $_SESSION['user_id'];
+        $query = "SELECT avatar FROM tb_users WHERE id = $id";
+        $result = mysqli_query($connection, $query);
+        $avatar = mysqli_fetch_assoc($result);
+    }
+
 ?>
 
 
@@ -24,12 +31,12 @@
                 <li><a href = "<?= ROOT_URL?>blog.php"> Blog  </a> </li>
                 <li><a href = "<?= ROOT_URL?>ourstory.php"> Our Story </a> </li>
                 <li><a href = "<?= ROOT_URL?>contact.php"> Contact Us </a> </li>
-                <?php if(isset($_SESSION['user-id'])): ?>
+                <?php if(isset($_SESSION['user-id'])) : ?>
                 
                 
                 <li class ="nav_profile"> 
                     <div class ="avatar">
-                        <img src="/images/jisoo.jpg">
+                    <img src="<?= ROOT_URL . 'images/' . $avatar['avatar'] ?>">
                     </div>
                     <ul>
                         <li> <a href="<?= ROOT_URL?>admin/index.php"> Dashboard </a> </li>
