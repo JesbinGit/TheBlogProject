@@ -23,7 +23,7 @@
                 <li><a href = "<?= ROOT_URL?>blog.php"> Blog  </a> </li>
                 <li><a href = "<?= ROOT_URL?>ourstory.php"> Our Story </a> </li>
                 <li><a href = "<?= ROOT_URL?>contact.php"> Contact Us </a> </li>
-                <li><a href = "<?= ROOT_URL?>signin.php"> Sign in  </a> </li>
+              <?php if(isset($_SESSION['userid'])) : ?>
                 
                 <li class ="nav_profile"> 
                     <div class ="avatar">
@@ -37,6 +37,9 @@
 
 
                 </li>
+                <?php else : ?>
+                <li><a href = "<?= ROOT_URL?>signin.php"> Sign in  </a> </li>
+                <?php endif ?>
             </ul>
 
 

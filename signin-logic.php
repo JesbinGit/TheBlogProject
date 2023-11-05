@@ -32,7 +32,7 @@ if(isset($_POST['submit']))
                 //SET session for access (this makes the user actually logged in)
                 $_SESSION['user-id'] = $user_record['id'];
                 // check if admin or not
-                 if($user_record['admin'] == 1 ) {
+                 if($user_record['is_admin'] == 1 ) {
                     $_SESSION['user_is_admin'] = true;
                  }
                  // log user in 
