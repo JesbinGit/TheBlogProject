@@ -7,13 +7,8 @@
         $id = $_SESSION['user_id'];
         $query = "SELECT avatar FROM tb_users WHERE id = $id";
         $result = mysqli_query($connection, $query);
-    
-        if ($result) {
-            $avatarData = mysqli_fetch_assoc($result);
-            if ($avatarData) {
-                $avatar = $avatarData['avatar'];
-            }
-        }
+        $avatardata = mysqli_fetch_assoc($result);
+        $avatar = $avatardata['avatar'];
     }
 
 ?>
@@ -43,7 +38,7 @@
                 
                 <li class ="nav_profile"> 
                     <div class ="avatar">
-                        <img src="<?= ROOT_URL . 'images/' . $avatar['avatar'] ?>">
+                        <img src="<?= ROOT_URL . 'images/' . $avatar ?>">
                     </div>
                     <ul>
                         <li> <a href="<?= ROOT_URL?>admin/index.php"> Dashboard </a> </li>
