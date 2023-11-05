@@ -55,7 +55,7 @@ if(isset($_POST['submit']))
 
 //if any other problem , redirect back to login page
 if(isset($_SESSION['signin'])) {
-    $_SESSION['sigin-data'] = $_POST;
+    $_SESSION['signin-data'] = $_POST;
     header('location: '. ROOT_URL . 'signin.php');
 }
 
