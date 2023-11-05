@@ -31,7 +31,7 @@ if(isset($_POST['submit']))
             //compare hashed password to user pass
             if(password_verify($password, $db_password)){
                 //SET session for access (this makes the user actually logged in)
-                $_SESSION['user-id'] = $user_record['id'];
+                $_SESSION['user_id'] = $user_record['id'];
                 // check if admin or not
                  if($user_record['is_admin'] == 1 ) {
                     $_SESSION['user_is_admin'] = true;
