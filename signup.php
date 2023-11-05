@@ -35,7 +35,7 @@ $confirmpassword = $_SESSION['signup-data']['confirmpassword'] ?? null;
         <h2>Join TheBlogProject</h2>
         <?php
         if(isset($_SESSION['signup'])): ?> 
-            <div class="alert_message success">
+            <div class="alert_message error">
             <p><?= 
             
             $_SESSION['signup']; 

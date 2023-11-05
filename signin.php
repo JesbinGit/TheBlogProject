@@ -35,7 +35,7 @@ unset($_SESSION['sigin-data']);
              ?>
         </div>
         <?php elseif (isset($_SESSION['signin'])) : ?>
-        <div class="alert_message success">
+        <div class="alert_message error">
             <?= $_SESSION['signin'];
             unset($_SESSION['signin']);
              ?>
