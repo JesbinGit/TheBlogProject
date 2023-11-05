@@ -35,15 +35,12 @@ unset($_SESSION['sigin-data']);
              ?>
         </div>
         <?php elseif (isset($_SESSION['signin'])) : ?>
-        
-       
-       <?php if(isset($_SESSION['signin'])): ?>
         <div class="alert_message success">
             <?= $_SESSION['signin'];
             unset($_SESSION['signin']);
              ?>
         </div>
-        <?php endif ?> <?php endif ?>
+     <?php endif ?> 
         
         
 
