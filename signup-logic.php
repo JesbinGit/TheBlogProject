@@ -63,8 +63,10 @@ if (isset($_POST['submit'])) {
                 if($avatar['size'] < 10000000){
                     move_uploaded_file($avatar_tmp_name, $avatar_destination_path);
                 } else {
-                    $_SESSION['signup'] = "Image is too large , should be less than 1 mb or  Image file should be jpg , png or jpeg";
+                    $_SESSION['add-user'] = "Image is too large , should be less than 1 mb";
                 }    
+            }else {
+                $_SESSION['add-user'] = "Unsupported Formatt, File should be .jpg .jpeg .png "; 
             }
          }
         }   
