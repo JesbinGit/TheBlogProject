@@ -18,11 +18,11 @@
 
         // Validate input values
         if (empty($firstname)) {
-            $_SESSION['add-user'] = "Please enter your First name";
+            $_SESSION['add-user'] = "Please enter  First name";
         } else if (empty($lastname)) {
-            $_SESSION['add-user'] = "Please enter your Last name";
+            $_SESSION['add-user'] = "Please enter  Last name";
         } else if (empty($username)) {
-            $_SESSION['add-user'] = "Please enter your User name";
+            $_SESSION['add-user'] = "Please enter  User name";
         } else if (empty($email)) {
             $_SESSION['add-user'] = "Please enter a valid Email address";
         } else if (strlen($createpassword) < 8 || strlen($confirmpassword) < 8) {
@@ -36,8 +36,6 @@
         } else {
             // Hash the password
             $hashed_password = password_hash($createpassword, PASSWORD_DEFAULT);
-             //couldnt find some small error for an hour so just rewrote the code upto here.
-             //same sanam thane but just some difference in else cycle.
 
              //check whether the username or email already exit in database
 
@@ -47,7 +45,6 @@
                 $_SESSION['add-user'] = "User already exist";
              }
              else{
-                //avatar stuff
                 // rename avatar names cause same name files may exist
                 $time = time(); //using time as unique key for pics to make image names random
                 $avatar_name = $time . $avatar['name'];
@@ -58,17 +55,20 @@
                 $idname = $idcode;
 
                 //validating avatar
-                $allowed_files = ['png','jpg','jpeg'];
+                $allowed_files = ['png','jpg','jpeg','JPG','PNG','JPEG'];
                 $extenstion = explode('.', $avatar_name);
                 $extenstion = end($extenstion);
                 if (in_array($extenstion, $allowed_files)){
                     // if yes check image is  not too large (1mb+)
-                    if($avatar['size'] < 10000000){
+                    if($avatar['size'] < 1000000){
                         move_uploaded_file($avatar_tmp_name, $avatar_destination_path);
                     } else {
-                        $_SESSION['add-user'] = "Image is too large , should be less than 1 mb or  Image file should be jpg , png or jpeg";
+                        $_SESSION['add-user'] = "Image is too large , should be less than 1 mb";
                     }    
+                }else {
+                    $_SESSION['add-user'] = "Unsupported Formatt, File should be .jpg .jpeg .png "; 
                 }
+                
              }
             }   
             //redirect back to add-user page incase of any Error
@@ -88,7 +88,7 @@
 
 
                 if(!mysqli_errno($connection)){
-                    $_SESSION['add-user-sucess'] = "New User has been successfully added";
+                    $_SESSION['add-user-sucess'] = "New User $username has been successfully added";
                     header('location: ' . ROOT_URL . 'admin/manage-users.php');
                     die();
                 }
