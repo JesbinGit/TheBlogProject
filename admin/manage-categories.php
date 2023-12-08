@@ -4,6 +4,16 @@
 
 
 <section class="dashboard">
+    
+    <?php if(isset($_SESSION['add-category-success'])):?>
+        <div class="alert_message success container">
+            <p>
+                <?=$_SESSION['add-category-success'];
+                unset($_SESSION['add-category-success']);?>
+            </p>
+        </div>
+    <?php endif ?>
+        
     <div class="container dashboard_container">
         <button id="show_sidebar-btn" class="sidebar_toggle"><i class="uil uil-angle-right-b"></i></button>
         <button id="hide_sidebar-btn" class="sidebar_toggle"><i class="uil uil-angle-left-b"></i></button>
@@ -56,16 +66,6 @@
                 <tbody>
                     <tr>
                         <td>Travel</td>
-                        <td><a href="edit-category.php" class="btn sm">Edit</a></td>
-                        <td><a href="delete-category.php" class="btn sm danger">Delete</a></td>
-                    </tr>
-                    <tr>
-                        <td>Wild-Life</td>
-                        <td><a href="edit-category.php" class="btn sm">Edit</a></td>
-                        <td><a href="delete-category.php" class="btn sm danger">Delete</a></td>
-                    </tr>
-                    <tr>
-                        <td>Science & Technology</td>
                         <td><a href="edit-category.php" class="btn sm">Edit</a></td>
                         <td><a href="delete-category.php" class="btn sm danger">Delete</a></td>
                     </tr>
