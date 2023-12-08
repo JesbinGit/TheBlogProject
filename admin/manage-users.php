@@ -4,6 +4,15 @@
 
 
 <section class="dashboard">
+
+        <?php if(isset($_SESSION['add-user-success'])): ?>
+            <div class="alert_message success">
+                <?= $_SESSION['add-user-success'];
+                unset($_SESSION['add-user-success']);
+                 ?>
+            </div>
+        <?php endif ?>
+
     <div class="container dashboard_container">
         <button id="show_sidebar-btn" class="sidebar_toggle"><i class="uil uil-angle-right-b"></i></button>
         <button id="hide_sidebar-btn" class="sidebar_toggle"><i class="uil uil-angle-left-b"></i></button>

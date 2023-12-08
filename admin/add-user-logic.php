@@ -88,7 +88,7 @@
 
 
                 if(!mysqli_errno($connection)){
-                    $_SESSION['add-user-sucess'] = "New User $username has been successfully added";
+                    $_SESSION['add-user-success'] = "New User $username has been successfully added";
                     header('location: ' . ROOT_URL . 'admin/manage-users.php');
                     die();
                 }
