@@ -12,10 +12,26 @@
 
 <section class="dashboard">
 
-        <?php if(isset($_SESSION['add-user-success'])): ?>
+        <?php if(isset($_SESSION['add-user-success'])): ?> <!--Shows if add user was sccessfull-->
             <div class="alert_message success container">
                 <?= $_SESSION['add-user-success'];
                 unset($_SESSION['add-user-success']);
+                ?>
+            </div>
+        <?php endif ?>
+
+        <?php if(isset($_SESSION['edit-user-success'])): ?> <!--Shows if edit user was sccessfull-->
+            <div class="alert_message success container">
+                <?= $_SESSION['edit-user-success'];
+                unset($_SESSION['edit-user-success']);
+                ?>
+            </div>
+        <?php endif ?>
+
+        <?php if(isset($_SESSION['edit-user'])): ?> <!--Shows if edit user was Unsccessfull-->
+            <div class="alert_message error container">
+                <?= $_SESSION['edit-user'];
+                unset($_SESSION['edit-user']);
                 ?>
             </div>
         <?php endif ?>
