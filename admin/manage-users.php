@@ -28,10 +28,26 @@
             </div>
         <?php endif ?>
 
+        <?php if(isset($_SESSION['delete-user-success'])): ?> <!--Shows if deleting user was sccessfull-->
+            <div class="alert_message success container">
+                <?= $_SESSION['delete-user-success'];
+                unset($_SESSION['delete-user-success']);
+                ?>
+            </div>
+        <?php endif ?>
+
         <?php if(isset($_SESSION['edit-user'])): ?> <!--Shows if edit user was Unsccessfull-->
             <div class="alert_message error container">
                 <?= $_SESSION['edit-user'];
                 unset($_SESSION['edit-user']);
+                ?>
+            </div>
+        <?php endif ?>
+
+        <?php if(isset($_SESSION['delete-user'])): ?> <!--Shows if deleting user was Unsccessfull-->
+            <div class="alert_message error container">
+                <?= $_SESSION['delete-user'];
+                unset($_SESSION['delete-user']);
                 ?>
             </div>
         <?php endif ?>
