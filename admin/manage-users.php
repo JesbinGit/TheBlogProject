@@ -77,8 +77,8 @@
                         <tr>
                             <td><?= "{$user['firstname']} {$user['lastname']}" ?></td>
                             <td><?= "{$user['username']}"?></td>
-                            <td><a href="<?= ROOT_URL ?>admin/edit-user.php?<?=$user['id']?>" class="btn sm">Edit</a></td>
-                            <td><a href="<?= ROOT_URL ?>admin/delete-user.php?<?=$user['id']?>" class="btn sm danger">Delete</a></td>
+                            <td><a href="<?= ROOT_URL ?>admin/edit-user.php?id=<?=$user['id']?>" class="btn sm">Edit</a></td>
+                            <td><a href="<?= ROOT_URL ?>admin/delete-user.php?id=<?=$user['id']?>" class="btn sm danger">Delete</a></td>
                             <td>
                                 <?php if($user['is_admin']== 1):?>
                                     Admin
