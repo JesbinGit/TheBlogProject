@@ -1,5 +1,8 @@
 <?php 
     require 'partials/header.php';
+
+    $query =  "SELECT * FROM tb_categories";
+    $categoires = mysqli_query($connection, $query);
 ?>
 
 
@@ -67,11 +70,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Travel</td>
-                            <td><a href="edit-category.php" class="btn sm">Edit</a></td>
-                            <td><a href="delete-category.php" class="btn sm danger">Delete</a></td>
-                        </tr>
+
+                        <?php while($category = mysqli_fetch_assoc($categoires)) : ?>
+                            
+                            <tr>
+                                <td><?= "{$category['title']}"?></td>
+                                <td><a href="edit-category.php?id=<?=$category['id']?>" class="btn sm">Edit</a></td>
+                                <td><a href="delete-category.php?id=<?=$category['id']?>" class="btn sm danger">Delete</a></td>
+                            </tr>
+
+                        <?php endwhile?>
+
                     </tbody>
                 </table>
 
