@@ -17,15 +17,7 @@
 
 <section class="form_section">
     <div class="container form_section-container">
-        <h2>Add User</h2><?php if(isset($_SESSION['add-user'])) : ?>
-            <div class="alert_message error">
-                <p>
-                    <?= $_SESSION['add-user']; 
-                    unset($_SESSION['add-user']);
-                    ?>
-                </p>
-            </div>
-        <?php endif ?>
+        <h2>Add User</h2>
         
         <?php if(isset($_SESSION['add-user'])) : ?>
             <div class="alert_message error">
@@ -45,9 +37,9 @@
             <input type="password" value="<?= $createpassword ?>" name="createpassword" placeholder="Create Password">
             <input type="password" name="confirmpassword" value="<?= $confirmpassword ?>" placeholder="Confirm Password">
             <select name="userrole"  >
-                <option value="1">Author</option>
+                <option value="0">Author</option>
                 <!--option value="0">Moderator</option-->
-                <option value="0">Admin</option>
+                <option value="1">Admin</option>
             </select>
 
             <div class="form_control">

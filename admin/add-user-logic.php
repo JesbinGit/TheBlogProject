@@ -29,8 +29,6 @@
             $_SESSION['add-user'] = "Password should be more than 8 characters";
         } else if (empty($avatar['name'])) {
             $_SESSION['add-user'] = "Please add an avatar";
-        } else if (empty($is_admin)) {
-            $_SESSION['add-user'] = "Please select a User role";    
         } else if ($createpassword !== $confirmpassword) {
             $_SESSION['add-user'] = "Passwords don't match";
         } else {
