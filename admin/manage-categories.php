@@ -55,22 +55,30 @@
         </aside>
         <main>
             <h2>Manage Categories</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Travel</td>
-                        <td><a href="edit-category.php" class="btn sm">Edit</a></td>
-                        <td><a href="delete-category.php" class="btn sm danger">Delete</a></td>
-                    </tr>
-                </tbody>
-            </table>
+
+            <?php if(mysqli_num_rows($categoires) > 0) : ?>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Travel</td>
+                            <td><a href="edit-category.php" class="btn sm">Edit</a></td>
+                            <td><a href="delete-category.php" class="btn sm danger">Delete</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            <?php else : ?>
+                <div class="alert_message error"> No Users found<div>
+            <?php endif ?>
+
         </main>
     </div>
 </section>
