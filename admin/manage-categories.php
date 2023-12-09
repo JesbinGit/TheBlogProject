@@ -1,7 +1,7 @@
 <?php 
     require 'partials/header.php';
 
-    $query =  "SELECT * FROM tb_categories";
+    $query =  "SELECT * FROM tb_categories ORDER BY title";
     $categoires = mysqli_query($connection, $query);
 ?>
 
@@ -16,6 +16,38 @@
             </p>
         </div>
     <?php endif ?>
+
+    <?php if(isset($_SESSION['edit-category-success'])): ?> <!--Shows if edit category was sccessfull-->
+            <div class="alert_message success container">
+                <?= $_SESSION['edit-category-success'];
+                unset($_SESSION['edit-category-success']);
+                ?>
+            </div>
+        <?php endif ?>
+
+        <?php if(isset($_SESSION['delete-category-success'])): ?> <!--Shows if deleting category was sccessfull-->
+            <div class="alert_message success container">
+                <?= $_SESSION['delete-category-success'];
+                unset($_SESSION['delete-category-success']);
+                ?>
+            </div>
+        <?php endif ?>
+
+        <?php if(isset($_SESSION['edit-category'])): ?> <!--Shows if edit category was Unsccessfull-->
+            <div class="alert_message error container">
+                <?= $_SESSION['edit-category'];
+                unset($_SESSION['edit-category']);
+                ?>
+            </div>
+        <?php endif ?>
+
+        <?php if(isset($_SESSION['delete-category'])): ?> <!--Shows if deleting category was Unsccessfull-->
+            <div class="alert_message error container">
+                <?= $_SESSION['delete-category'];
+                unset($_SESSION['delete-category']);
+                ?>
+            </div>
+        <?php endif ?>
         
     <div class="container dashboard_container">
         <button id="show_sidebar-btn" class="sidebar_toggle"><i class="uil uil-angle-right-b"></i></button>
@@ -85,7 +117,7 @@
                 </table>
 
             <?php else : ?>
-                <div class="alert_message error"> No Users found<div>
+                <div class="alert_message error"> No Categories exist<div>
             <?php endif ?>
 
         </main>
