@@ -111,8 +111,15 @@
  <!-- ================ END OF POSTS ================-->
     <section class="category__buttons">
         <div class="container category__button-container">
-            <a href="<?=ROOT_URL?>category-post.php" class="category__button">Wild Life</a>
-            
+            <?php
+                $all_category_query = "SELECT * FROM tb_categories ORDER BY title;";
+                $all_category_result = mysqli_query($connection, $all_category_query);
+            ?>
+            <?php while($category = mysqli_fetch_assoc($all_category_result)) :?>
+                
+                <a href="<?=ROOT_URL?>category-post.php?id=<?=$category['id']?>" class="category__button"><?=$category['title']?></a>
+
+            <?php endwhile ?>
         </div>
 
     </section>
