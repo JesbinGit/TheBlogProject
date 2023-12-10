@@ -43,8 +43,8 @@
             <select name="category_id" >
                 
                 <?php while($category = mysqli_fetch_assoc($categories)) : ?>
-                   
-                    <?php if($category['id'] == $_SESSION['edit-post-data']['category_id']) : ?>
+                    <?php $current_category_id = $_SESSION['edit-post-data']['category_id'] ?? $post['category_id'];
+                    if($category['id'] == $current_category_id) : ?>
                         <option value="<?=$category['id']?>" selected><?=$category['title']?></option>
                     <?php else : ?>
                         <option value="<?=$category['id']?>"><?=$category['title']?></option>
@@ -60,8 +60,8 @@
            
                 <div class="form_control inline">
                     <label for="is_featured">Featured</label>
-                    
-                    <?php $status = $_SESSION['edit-post-data']['is_featured'] ?? $post['is_featured'] ;if( $status == 1) : ?>
+                    <?php $current_status = $_SESSION['edit-post-data']['body'] ?? $post['is_featured'] ;
+                    if( $current_status == 1) : ?>
                         <input type="checkbox" name="is_featured" value="1" id="is_featured" checked>
                     <?php else : ?>
                         <input type="checkbox" name="is_featured" value="1" id="is_featured" >
