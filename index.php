@@ -59,7 +59,7 @@
     
  <!-- ================ END OF FEATURED POST ================-->
  
- <section class ="posts" >
+ <section class ="posts <?=!empty($featured) ? '' : 'section_extra-margin' ?> " >
 
         <div class="container post__container">
 
