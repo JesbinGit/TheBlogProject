@@ -32,7 +32,7 @@
                 ?>
                 <a href="<?=ROOT_URL?>category-post.php?id=<?=$category['id']?>" class="category__button"> <?=$category['title']?></a>
                 
-                <h2 class="post__title"> <a href="post.php?id=<?=$featured_post['id']?>"><?=$featured_post['title']?></a></h2>
+                <h2 class="post__title"> <a href="<?=ROOT_URL?>post.php?id=<?=$featured_post['id']?>"><?=$featured_post['title']?></a></h2>
                 <p class="post_body"> <?=substr($featured_post['body'],0,300)?>....</p>
               
                 <div class="post__author">
