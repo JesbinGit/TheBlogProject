@@ -38,13 +38,13 @@
             <input type="hidden" name="id" value="<?=$post['id']?>">
             <input type="hidden" name="previous_thumbnail" value="<?=$post['thumbnail']?>">
            
-            <input type="text" name="title" value="<?=$post['title']?>" placeholder="Title">
+            <input type="text" name="title" value="<?=$_SESSION['edit-post-data']['title'] ?? $post['title']?>" placeholder="Title">
             
             <select name="category_id" >
                 
                 <?php while($category = mysqli_fetch_assoc($categories)) : ?>
                    
-                    <?php if($category['id'] == $post['category_id']) : ?>
+                    <?php if($category['id'] == $_SESSION['edit-post-data']['category_id']) : ?>
                         <option value="<?=$category['id']?>" selected><?=$category['title']?></option>
                     <?php else : ?>
                         <option value="<?=$category['id']?>"><?=$category['title']?></option>
@@ -54,14 +54,14 @@
 
             </select>
 
-            <textarea rows="10" name="body" placeholder="Body"><?=$post['body']?></textarea>
+            <textarea rows="10" name="body" placeholder="Body"><?=$_SESSION['edit-post-data']['body'] ?? $post['body']?></textarea>
             
             <?php if(isset($_SESSION['user_is_admin'])) : ?>
            
                 <div class="form_control inline">
                     <label for="is_featured">Featured</label>
                     
-                    <?php if( $post['is_featured'] == 1) : ?>
+                    <?php $status = $_SESSION['edit-post-data']['is_featured'] ?? $post['is_featured'] ;if( $status == 1) : ?>
                         <input type="checkbox" name="is_featured" value="1" id="is_featured" checked>
                     <?php else : ?>
                         <input type="checkbox" name="is_featured" value="1" id="is_featured" >
@@ -75,7 +75,7 @@
                 <label for="thumbnail">Change Thumbnail</label>
                 <input type="file" name="thumbnail" id="thumbnail">
             </div>
-            
+            <?php unset($_SESSION['edit-post-data']); ?>
             <button type="submit" name="submit" class="btn">Update Post</button>
             
         </form>
