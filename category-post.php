@@ -1,115 +1,77 @@
 <?php 
     require 'partials/header.php';
+
+    if(isset($_GET['id'])){
+        $id = filter_var($_GET['id'],FILTER_SANITIZE_NUMBER_INT);
+        $query = "SELECT * FROM tb_posts WHERE category_id=$id  ORDER BY date_time DESC ";
+        $posts = mysqli_query($connection, $query);
+    } else {
+        header('location: '. ROOT_URL );
+    }
 ?>
 
 
     <header class = "category__title">
-        <h2> Category</h2>
+
+        <?php 
+            //fetching category info [use foreign key to improve]
+            $category_id = $_GET['id'];
+            $category_query = "SELECT * FROM tb_categories WHERE id=$category_id";
+            $category_result = mysqli_query($connection, $category_query);
+            $category = mysqli_fetch_assoc($category_result);
+        ?>
+        <h2><?=$category['title']?></h2>
     </header>
 
 <section class ="posts" >
     <div class="container post__container">
-        <article  class="post">
-        <div class="post_thumbnail">
-            <img src="/images/b2.png">
-        </div>
         
-        <div class="post__info">
-            <a href="category-post.php" class="category__button"> Art </a>
-            <h3 class="post__title"><a href="post.php">Randome post title 2</a> </h3>
-            <p class="post_body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias natus iste explicabo ad corporis totam ipsam! Dignissimos culpa eius excepturi ut necessitatibus totam deleniti. Alias molestiae ea sapiente sunt inventore.     
-            </p>
-            <div class="post__author">
-                <div class="post__author-avatar">
-                    <img src="/images/jennie.jpg">
-                </div>
-                <div class="post__author-info.jpg">
-                    <h5> Danny Cumsalot </h5>
-                    <small> March 17, 2001 </small>
-                </div>
-
-            </div>
-        </div>
-        </article>
-        <article class="post">
-            <div class="post_thumbnail">
-                <img src="/images/b2.png">
-            </div>
-            
-            <div class="post__info">
-                <a href=""class="category__button"> Art </a>
-                <h3 class="post__title"><a href="post.php">Randome post title 2</a> </h3>
-                <p class="post_body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias natus iste explicabo ad corporis totam ipsam! Dignissimos culpa eius excepturi ut necessitatibus totam deleniti. Alias molestiae ea sapiente sunt inventore.     
-                </p>
-                <div class="post__author">
-                    <div class="post__author-avatar">
-                        <img src="/images/jennie.jpg">
+    <?php while($post = mysqli_fetch_assoc($posts)) : ?>
+                <article  class="post">
+                    <div class="post_thumbnail">
+                        <img src="images/<?=$post['thumbnail']?>">
                     </div>
-                    <div class="post__author-info.jpg">
-                        <h5> Danny Cumsalot </h5>
-                        <small> March 17, 2001 </small>
-                    </div>
-
-                </div>
-            </div>
-         </article>
-         <article class="post">
-            <div class="post_thumbnail">
-                <img src="/images/b2.png">
-            </div>
-            
-            <div class="post__info">
-                <a href=""class="category__button"> Art </a>
-                <h3 class="post__title"><a href="post.php">Randome post title 2</a> </h3>
-                <p class="post_body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias natus iste explicabo ad corporis totam ipsam! Dignissimos culpa eius excepturi ut necessitatibus totam deleniti. Alias molestiae ea sapiente sunt inventore.     
-                </p>
-                <div class="post__author">
-                    <div class="post__author-avatar">
-                        <img src="/images/jennie.jpg">
-                    </div>
-                    <div class="post__author-info.jpg">
-                        <h5> Danny Cumsalot </h5>
-                        <small> March 17, 2001 </small>
-                    </div>
-
-                </div>
-            </div>
-            </article>
-            <article class="post">
-                <div class="post_thumbnail">
-                    <img src="/images/b2.png">
-                </div>
                 
-                <div class="post__info">
-                    <a href=""class="category__button"> Art </a>
-                    <h3 class="post__title"><a href="post.php">Randome post title 2</a> </h3>
-                    <p class="post_body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias natus iste explicabo ad corporis totam ipsam! Dignissimos culpa eius excepturi ut necessitatibus totam deleniti. Alias molestiae ea sapiente sunt inventore.     
-                    </p>
-                    <div class="post__author">
-                        <div class="post__author-avatar">
-                            <img src="/images/jennie.jpg">
+                    <div class="post__info">
+                        
+                        <h3 class="post__title"><a href="<?=ROOT_URL?>post.php?id=<?=$post['id']?>"> <?=$post['title']?> </a> </h3>
+                        <p class="post_body"> <?=substr($post['body'],0,200)?>..... </p>
+                        
+                        <?php
+                            //fetch author info  [use forign key to improve]
+                            $author_id = $post['author_id'];
+                            $author_query = "SELECT * FROM tb_users WHERE id=$author_id";
+                            $author_result = mysqli_query($connection, $author_query);
+                            $author = mysqli_fetch_assoc($author_result);
+                        
+                        ?>
+                        <div class="post__author">
+                            <div class="post__author-avatar">
+                                <img src="images/<?=$author['avatar']?>">
+                            </div>
+                            <div class="post__author-info.jpg">
+                                <h5>By: <?="{$author['firstname']} {$author['lastname']}"?></h5>
+                                <small><?= date("d M, Y - H:i", strtotime($post['date_time']))?> </small>
+                            </div>
+                
                         </div>
-                        <div class="post__author-info.jpg">
-                            <h5> Danny Cumsalot </h5>
-                            <small> March 17, 2001 </small>
-                        </div>
-    
                     </div>
-                </div>
                 </article>
-        
+            <?php endwhile ?>
     </div>
 </section>
 
 <!-- ================ END OF POSTS ================-->
 <section class="category__buttons">
     <div class="container category__button-container">
-        <a href="" class="category__button">Wild Life</a>
-        <a href="" class="category__button">Art</a>
-        <a href="" class="category__button">Food</a>
-        <a href="" class="category__button">Music</a>
-        <a href="" class="category__button">Tech</a>
-        <a href="" class="category__button">Self Growth</a>
+        <?php
+            $all_category_query = "SELECT * FROM tb_categories ORDER BY title;";
+            $all_category_result = mysqli_query($connection, $all_category_query);
+        ?>
+        <?php while($category = mysqli_fetch_assoc($all_category_result)) :?>
+            
+            <a href="<?=ROOT_URL?>category-post.php?id=<?=$category['id']?>" class="category__button"><?=$category['title']?></a>
+        <?php endwhile ?>
     </div>
 
 </section>
