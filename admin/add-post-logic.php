@@ -44,7 +44,7 @@
                     $_SESSION['add-post'] = "Image Size too large, Should be less than 2mb";
                 }
             } else{
-                $_SESSION['add-post'] = "Invalid Image Format, Should be .png, .jpg, .jpeg";
+                $_SESSION['add-post'] = "Invalid Image Format, Should be .png   .jpg   .jpeg";
             }
 
         }
