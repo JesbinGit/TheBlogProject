@@ -1,5 +1,11 @@
 <?php 
     require 'partials/header.php';
+
+    //fetch cuurent user's posts
+    $curent_user_id = $_SESSION['user_id'];
+    $query = "SELECT tb_posts.id, tb_posts.title, tb_categories.title AS category FROM tb_posts JOIN tb_categories ON tb_posts.category_id = tb_categories.id WHERE tb_posts.author_id = $curent_user_id ORDER BY tb_posts.id DESC";
+    $posts = mysqli_query($connection, $query);
+
 ?>
 
 
@@ -44,49 +50,39 @@
             </ul>
         </aside>
         <main>
-            <h2>Manage Users</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Category</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-                        <td>Art</td>
-                        <td><a href="edit-post.php" class="btn sm">Edit</a></td>
-                        <td><a href="delete-post.php" class="btn sm danger">Delete</a></td>
-                    </tr>
-                    <tr>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-                        <td>Art</td>
-                        <td><a href="edit-post.php" class="btn sm">Edit</a></td>
-                        <td><a href="delete-post.php" class="btn sm danger">Delete</a></td>
-                    </tr>
-                    <tr>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-                        <td>Art</td>
-                        <td><a href="edit-post.php" class="btn sm">Edit</a></td>
-                        <td><a href="delete-post.php" class="btn sm danger">Delete</a></td>
-                    </tr>
-                    <tr>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-                        <td>Art</td>
-                        <td><a href="edit-post.php" class="btn sm">Edit</a></td>
-                        <td><a href="delete-post.php" class="btn sm danger">Delete</a></td>
-                    </tr>
-                    <tr>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-                        <td>Art</td>
-                        <td><a href="edit-post.php" class="btn sm">Edit</a></td>
-                        <td><a href="delete-post.php" class="btn sm danger">Delete</a></td>
-                    </tr>
-                </tbody>
-            </table>
+            <h2>Manage Posts</h2>
+
+            <?php if(mysqli_num_rows($posts) > 0) : ?>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <?php while($post = mysqli_fetch_assoc($posts)) : ?>
+                                <!--Removed fetch category as it possible to fetch it while fetching the post Data (6:34:00 video timeline if you want to check it)-->
+                            <tr>
+                                <td><?=$post['title']?></td>
+                                <td><?=$post['category']?></td>
+                                <td><a href="<?=ROOT_URL?>admin/edit-post.php?id=<?=$post['id']?>" class="btn sm">Edit</a></td>
+                                <td><a href="<?=ROOT_URL?>admin/delete-post.php?id=<?=$post['id']?>" class="btn sm danger">Delete</a></td>
+                            </tr>
+
+                        <?php endwhile; ?>
+
+                    </tbody>
+                </table>
+            
+            <?php else : ?>
+                <div class="alert_message error"> You haven't created a Post yet.<div>
+            <?php endif ?>
+
         </main>
     </div>
 </section>
