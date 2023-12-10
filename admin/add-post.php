@@ -9,7 +9,7 @@
     $title = $_SESSION['add-post-data']['title'] ?? null;
     $body = $_SESSION['add-post-data']['body'] ?? null;
 
-
+    unset($_SESSION['add-post-data']);
 ?>
 
 
