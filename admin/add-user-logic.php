@@ -93,7 +93,7 @@
             }
 
     } else {
-        header('location: ' . ROOT_URL . '/admin/add-user.php' );
+        header('location: ' . ROOT_URL . 'admin/add-user.php' );
         die();
     }
 ?>

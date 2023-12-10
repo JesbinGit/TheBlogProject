@@ -8,7 +8,7 @@
     $result = mysqli_query($connection, $query);
     $category = mysqli_fetch_assoc($result);
   } else {
-    header('location: '. ROOT_URL . '/admin/manage-categories.php');
+    header('location: '. ROOT_URL . 'admin/manage-categories.php');
   }
 
 ?>

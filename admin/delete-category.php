@@ -22,6 +22,6 @@
         }
     }
 
-    header('location: '. ROOT_URL . '/admin/manage-categories.php');
+    header('location: '. ROOT_URL . 'admin/manage-categories.php');
 
 ?>

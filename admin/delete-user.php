@@ -29,9 +29,9 @@
             } 
         }
       } else {
-        header('location: '. ROOT_URL . '/admin/manage-users.php');
+        header('location: '. ROOT_URL . 'admin/manage-users.php');
       }
 
-      header('location: '. ROOT_URL . '/admin/manage-users.php');
+      header('location: '. ROOT_URL . 'admin/manage-users.php');
 
 ?>
