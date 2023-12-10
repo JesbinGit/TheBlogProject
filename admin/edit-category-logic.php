@@ -19,7 +19,7 @@
             $result = mysqli_query($connection, $query);
 
             if(mysqli_errno($connection)){
-                $_SESSION['edi-category'] = "Failed Update category info.";
+                $_SESSION['edit-category'] = "Failed Update category info.";
             } else{
                 $_SESSION['edit-category-success'] = "Updated category to $title successfully.";
             }

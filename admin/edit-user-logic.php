@@ -19,7 +19,7 @@
             $result = mysqli_query($connection, $query);
 
             if(mysqli_errno($connection)){
-                $_SESSION['edi-user'] = "Failed Update User info.";
+                $_SESSION['edit-user'] = "Failed Update User info.";
             } else{
                 $_SESSION['edit-user-success'] = "Updated to $firstname $lastname successfully.";
             }
