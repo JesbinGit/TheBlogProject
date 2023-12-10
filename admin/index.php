@@ -19,15 +19,32 @@
                     unset($_SESSION['add-post-success']);
                     ?>
                 </p>
+            </div>
         <?php endif ?>
 
         <?php if(isset($_SESSION['edit-post-success'])) : ?>
-            <div class="alert_message success">
+            <div class="alert_message success container">
                 <p>
                     <?= $_SESSION['edit-post-success']; 
                     unset($_SESSION['edit-post-success']);
                     ?>
                 </p>
+            </div>
+        <?php endif ?>
+
+        <?php if(isset($_SESSION['delete-post-success'])): ?> <!--Shows if deleting post was sccessfull-->
+            <div class="alert_message success container">
+                <?= $_SESSION['delete-post-success'];
+                unset($_SESSION['delete-post-success']);
+                ?>
+            </div>
+        <?php endif ?>
+
+        <?php if(isset($_SESSION['delete-post'])): ?> <!--Shows if deleting post was Unsccessfull-->
+            <div class="alert_message error container">
+                <?= $_SESSION['delete-post'];
+                unset($_SESSION['delete-post']);
+                ?>
             </div>
         <?php endif ?>
 
