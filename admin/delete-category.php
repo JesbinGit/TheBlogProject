@@ -11,9 +11,17 @@
 
         ///Making sure we got only one category info
         if(mysqli_num_rows($result)==1){
-            //Delete category from DataBase
+            
+            //chaging post to UnCatagorised when selected category is deleted
+            $update_query = "UPDATE tb_posts SET category_id=11 WHERE category_id=$id"; //change category id if any catgory issue occures
+            $update_query_result = mysqli_query($connection, $update_query);
+
+            if(!mysqli_errno($connection)){
+                //Delete category from DataBase
             $delete_category_query =  "DELETE FROM tb_categories WHERE id=$id LIMIT 1";
             $delete_category_result = mysqli_query($connection,$delete_category_query);
+            }
+
             if(mysqli_errno($connection)){
                 $_SESSION['delete-category'] = "Couldn't Delete category $title ";
             } else{
