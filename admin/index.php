@@ -3,7 +3,7 @@
 
     //fetch current user's posts
     $curent_user_id = $_SESSION['user_id'];
-    $query = "SELECT tb_posts.id, tb_posts.title, tb_categories.title AS category FROM tb_posts JOIN tb_categories ON tb_posts.category_id = tb_categories.id WHERE tb_posts.author_id = $curent_user_id ORDER BY tb_posts.id DESC";
+    $query = "SELECT tb_posts.id, tb_posts.title, tb_posts.is_featured, tb_categories.title AS category FROM tb_posts JOIN tb_categories ON tb_posts.category_id = tb_categories.id WHERE tb_posts.author_id = $curent_user_id ORDER BY tb_posts.id DESC";
     $posts = mysqli_query($connection, $query);
 
 ?>
@@ -17,6 +17,15 @@
                 <p>
                     <?= $_SESSION['add-post-success']; 
                     unset($_SESSION['add-post-success']);
+                    ?>
+                </p>
+        <?php endif ?>
+
+        <?php if(isset($_SESSION['edit-post-success'])) : ?>
+            <div class="alert_message success">
+                <p>
+                    <?= $_SESSION['edit-post-success']; 
+                    unset($_SESSION['edit-post-success']);
                     ?>
                 </p>
             </div>
@@ -80,7 +89,11 @@
                         <?php while($post = mysqli_fetch_assoc($posts)) : ?>
                                 <!--Removed fetch category as it possible to fetch it while fetching the post Data (6:34:00 video timeline if you want to check it)-->
                             <tr>
-                                <td><?=$post['title']?></td>
+                                <td><?=$post['title']?>
+                                    <?php if($post['is_featured']):?>
+                                        <p class="alert_message success container ">Featured</p><!--Remove or beautify this[diffrent css class style in that case] -->
+                                    <?php endif ?>
+                                </td>
                                 <td><?=$post['category']?></td>
                                 <td><a href="<?=ROOT_URL?>admin/edit-post.php?id=<?=$post['id']?>" class="btn sm">Edit</a></td>
                                 <td><a href="<?=ROOT_URL?>admin/delete-post.php?id=<?=$post['id']?>" class="btn sm danger">Delete</a></td>

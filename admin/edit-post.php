@@ -1,32 +1,84 @@
 <?php 
     require 'partials/header.php';
+    
+    //checks for post id 
+    if(isset($_GET['id'])){
+        $id = filter_var($_GET['id'],FILTER_SANITIZE_NUMBER_INT);
+        $query = "SELECT * FROM tb_posts WHERE id=$id";
+        $result = mysqli_query($connection, $query);
+        $post = mysqli_fetch_assoc($result);
+    } else {
+        header('location: '. ROOT_URL . 'admin/');
+        die();
+    }
+
+    //Fetch category info from DB
+    $category_query = "SELECT * FROM tb_categories";
+    $categories = mysqli_query($connection, $category_query);
+
 ?>
 
 
 <section class="form_section">
     <div class="container form_section-container">
         <h2>Edit Post</h2>
-        <form action="" enctype="multipart/form-data" >
-            <input type="text" placeholder="Title">
-            <select >
-                <option value="1">Travel</option>
-                <option value="">Art</option>
-                <option value="">Science & Technology</option>
-                <option value="">Sample1</option>
-                <option value="">Sample2</option>
-                <option value="">Sample3</option>
+
+            <?php if(isset($_SESSION['edit-post'])) : ?>
+                <div class="alert_message error">
+                    <p>
+                        <?= $_SESSION['edit-post']; 
+                        unset($_SESSION['edit-post']);
+                        ?>
+                    </p>
+                </div>
+            <?php endif ?>
+
+        <form action="<?=ROOT_URL?>admin/edit-post-logic.php" enctype="multipart/form-data" method="POST">
+
+            <input type="hidden" name="id" value="<?=$post['id']?>">
+            <input type="hidden" name="previous_thumbnail" value="<?=$post['thumbnail']?>">
+           
+            <input type="text" name="title" value="<?=$post['title']?>" placeholder="Title">
+            
+            <select name="category_id" >
+                
+                <?php while($category = mysqli_fetch_assoc($categories)) : ?>
+                   
+                    <?php if($category['id'] == $post['category_id']) : ?>
+                        <option value="<?=$category['id']?>" selected><?=$category['title']?></option>
+                    <?php else : ?>
+                        <option value="<?=$category['id']?>"><?=$category['title']?></option>
+                    <?php endif ?>
+
+                <?php endwhile ?>
+
             </select>
-            <textarea rows="10" placeholder="Body"></textarea>
-            <div class="form_control inline">
-                <label for="is_featured">Featured</label>
-                <input type="checkbox" id="is_featured" checked>
-            </div>
+
+            <textarea rows="10" name="body" placeholder="Body"><?=$post['body']?></textarea>
+            
+            <?php if(isset($_SESSION['user_is_admin'])) : ?>
+           
+                <div class="form_control inline">
+                    <label for="is_featured">Featured</label>
+                    
+                    <?php if( $post['is_featured'] == 1) : ?>
+                        <input type="checkbox" name="is_featured" value="1" id="is_featured" checked>
+                    <?php else : ?>
+                        <input type="checkbox" name="is_featured" value="1" id="is_featured" >
+                    <?php endif ?>
+
+                </div>
+
+            <?php endif ?>
+           
             <div class="form_control">
                 <label for="thumbnail">Change Thumbnail</label>
-                <input type="file" id="thumbnail">
+                <input type="file" name="thumbnail" id="thumbnail">
             </div>
-            <button type="submit" class="btn">Update Post</button>
-         </form>
+            
+            <button type="submit" name="submit" class="btn">Update Post</button>
+            
+        </form>
     </div>
 </section>
 
