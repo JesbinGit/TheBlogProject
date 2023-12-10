@@ -17,6 +17,18 @@
             if($avatar_path) {
                 unlink($avatar_path);
 
+                //Fetch and remove every post thumbnail made by the deleted user
+                $delete_thumbnail_query = "SELECT thumbnail FROM tb_posts WHERE author_id=$id";
+                $delete_thumbnail_result = mysqli_query($connection, $delete_thumbnail_query);
+                if(mysqli_num_rows($delete_thumbnail_result) > 0){
+                    while($thumbnail =mysqli_fetch_assoc($delete_thumbnail_result)){
+                        $thumbnail_path = '../images/' . $thumbnail['thumbnail'];
+
+                        if($thumbnail_path){
+                            unlink($thumbnail_path);
+                        }
+                    }
+                }
 
                 //Delete user from DataBase
                 $delete_user_query =  "DELETE FROM tb_users WHERE id=$id LIMIT 1";
