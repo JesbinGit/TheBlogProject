@@ -13,7 +13,7 @@
         if(mysqli_num_rows($result)==1){
             
             //chaging post to UnCatagorised when selected category is deleted
-            $update_query = "UPDATE tb_posts SET category_id=11 WHERE category_id=$id"; //change category id if any catgory issue occures
+            $update_query = "UPDATE tb_posts SET category_id=22 WHERE category_id=$id"; //change category id if any catgory issue occures
             $update_query_result = mysqli_query($connection, $update_query);
 
             if(!mysqli_errno($connection)){
