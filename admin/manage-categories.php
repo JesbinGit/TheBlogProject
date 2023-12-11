@@ -107,8 +107,14 @@
                             
                             <tr>
                                 <td><?= "{$category['title']}"?></td>
-                                <td><a href="edit-category.php?id=<?=$category['id']?>" class="btn sm">Edit</a></td>
-                                <td><a href="delete-category.php?id=<?=$category['id']?>" class="btn sm danger">Delete</a></td>
+                                <?php if($category['id'] == 22) : ?>
+                                    <td></td>
+                                    <td></td>
+                                <?php else : ?>
+                                    <td><a href="edit-category.php?id=<?=$category['id']?>" class="btn sm">Edit</a></td>
+                                    <td><a href="delete-category.php?id=<?=$category['id']?>" class="btn sm danger">Delete</a></td>
+                                <?php endif ?>
+
                             </tr>
 
                         <?php endwhile?>
