@@ -30,7 +30,7 @@
                 if(in_array($extension, $allowed_files)){
                    
                     //Make sure image not too big (<size)
-                    if($thumbnail['size'] < 2_00_000){
+                    if($thumbnail['size'] < 19999999){
                         //work on new thumbnail
                         $time = time(); // time added to thumbnail name to be unique
                         $thumbnail_name = $time . $thumbnail['name'];

@@ -36,7 +36,7 @@
             if(in_array($extension, $allowed_files)){
                 
                 //Make sure image not too big (<size)
-                if($thumbnail['size'] < 2_00_000){
+                if($thumbnail['size'] < 19999999){
                     
                     //upload thumbnail
                     move_uploaded_file($thumbnail_tmp_name, $thumbnail_destination_path);
