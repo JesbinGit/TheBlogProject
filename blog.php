@@ -20,7 +20,7 @@
 
 
  <!-- ================ END OF Search ================-->
- <section class ="posts <?=!empty($featured) ? '' : 'section_extra-margin' ?> " >
+ <section class ="posts section_extra-margin" >
 
 <div class="container post__container">
 
