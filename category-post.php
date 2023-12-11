@@ -23,6 +23,8 @@
         <h2><?=$category['title']?></h2>
     </header>
 
+
+<?php if(mysqli_num_rows($posts)>0) : ?>
 <section class ="posts" >
     <div class="container post__container">
         
@@ -60,6 +62,9 @@
             <?php endwhile ?>
     </div>
 </section>
+<?php else : ?>
+    <div class="alert_message error lg">No posts under this category</div>
+<?php endif ?>
 
 <!-- ================ END OF POSTS ================-->
 <section class="category__buttons">
