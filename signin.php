@@ -45,7 +45,7 @@ unset($_SESSION['sigin-data']);
         
 
         <form action="<?= ROOT_URL ?>signin-logic.php" method="POST" enctype="multipart/form-data" >
-            <input type="text" name ="username_email" value = "<?= $username_email ?>" placeholder="Username or Email">
+            <input type="text" name ="username_email" value = "<?= $username_email ?>" placeholder="Username or Email" autofocus>
             <input type="password" name = "password"  value = "<?=$password ?>" placeholder="Password">
             <button type="submit" name="submit" class="btn center">Sign In</button>
             <small >Don't have an Account? <a href="signup.php">Sign Up!</a></small>
