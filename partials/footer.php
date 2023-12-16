@@ -13,12 +13,15 @@
             <article>
                 <h4> Categories</h4>
                 <ul>
-                    <li><a href="">Art</a></li>
-                    <li><a href="">Tech</a></li>
-                    <li><a href="">Food</a></li>
-                    <li><a href="">Music</a></li>
-                    <li><a href="">Self Growth</a></li>
-                    <li><a href="">Wild Life</a></li>
+                    
+                    <?php
+                        $all_category_query = "SELECT * FROM tb_categories ORDER BY title;";
+                        $all_category_result = mysqli_query($connection, $all_category_query);
+                    ?>
+                    <?php while($category = mysqli_fetch_assoc($all_category_result)) :?>
+                        
+                        <li><a href="<?=ROOT_URL?>category-post.php?id=<?=$category['id']?>"><?=$category['title']?></a></li>
+                    <?php endwhile ?>
 
                 </ul>
             </article>
