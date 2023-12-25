@@ -11,7 +11,7 @@
     $posts = mysqli_query($connection, $query);
 
 ?>
- 
+     
 
     <!--Show featured if any-->
     <?php if(mysqli_num_rows($featured_result)==1) : ?>
