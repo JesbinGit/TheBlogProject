@@ -50,6 +50,7 @@
                 </li>
                 <?php else : ?>
                 <li><a href = "<?= ROOT_URL?>signin.php"> Sign in  </a> </li>
+                <li class="nav_butt-signup" ><a href = "<?= ROOT_URL?>signup.php"  class="nav_signup"> Sign Up  </a> </li>
                 <?php endif ?>
             </ul>
 

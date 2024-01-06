@@ -154,6 +154,28 @@ nav button {
     cursor: pointer;
 }
 
+.nav_signup {
+    color: var(--color-white);
+    transition: var(--transition);
+}
+.nav_butt-signup {
+    background-color: var(--color-bg);
+    border-radius: var(--card-border-radius-2);
+    padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+}
+
+.nav_butt-signup:hover {
+    background-color: var(--color-primary-variant);
+    transition: var(--transition);
+}
+
+/*.nav_butt is not used*/
+.nav_butt {     
+    background-color: var(--color-bg);
+    border-radius: var(--card-border-radius-3);
+    padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
 .nav_profile ul {
     position: absolute;
     top: 140%;
