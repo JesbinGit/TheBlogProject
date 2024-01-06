@@ -4,6 +4,7 @@
     --color-primary: #6f6af8;
     --color-primary-light: hsla(242, 91%, 69%, 0.18);
     --color-primary-variant: #5854c7;
+    --color-primary-neon:#00aaff;
     --color-red: #da0f3f;
     --color-red-neon: #ff0015;
     --color-red-light: hsl(346, 87%, 46%, 15%);
@@ -180,9 +181,8 @@ nav button {
 }
 
 
-.nav_sign:hover {
-    background-color: var(--color-bg);
-    color: var(--color-primary-variant);
+.nav_sign:hover{
+    background-color: var(--color-primary-neon);
     transition: var(--transition);
 }
 
@@ -298,7 +298,7 @@ nav button {
 }
 
 .signup_butt:hover, .signup_butt.link:hover {     
-    background-color: var(--color-bg);
+    background-color: var(--color-primary-neon);
     transition: var(--transition);
 }
 
