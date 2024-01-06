@@ -270,7 +270,7 @@ nav button {
 
 .signup_butt {     
     background-color: var(--color-deep-dark);
-    border-radius: var(--card-border-radius-1)  var(--card-border-radius-1)  var(--card-border-radius-4) var(--card-border-radius-2);
+    border-radius: var(--card-border-radius-3)  var(--card-border-radius-3)  var(--card-border-radius-4) var(--card-border-radius-4);
     padding: 1rem 1rem;
     margin: 2rem;
 }
