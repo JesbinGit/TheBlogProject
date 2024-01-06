@@ -15,6 +15,7 @@
     --color-gray-200: rgba(242, 242, 254, 0.7);
     --color-white: #ffffff;
     --color-bg: #0f0f3e;
+    --color-deep-dark: #000015;
   
 
     --transition: all 350ms ease;
@@ -265,13 +266,42 @@ nav button {
     margin-left: auto;
     margin-right: auto;
 }
+/*================================== Welcome message ===============================*/
+
+.signup_butt {     
+    background-color: var(--color-deep-dark);
+    border-radius: var(--card-border-radius-1)  var(--card-border-radius-1)  var(--card-border-radius-4) var(--card-border-radius-2);
+    padding: 1rem 1rem;
+    margin: 2rem;
+}
+
+.signup_butt.link {     
+    border-radius: var(--card-border-radius-1);
+    padding: 0.1rem 1rem;
+    margin: 1rem 1rem;
+}
+
+.signup_butt:hover, .signup_butt.link:hover {     
+    background-color: var(--color-bg);
+    transition: var(--transition);
+}
+
+.welcome_box {
+    background-image: linear-gradient(var(--color-bg),var(--color-primary)) ;
+    padding: 1rem 5rem 3rem 3rem;
+    border-radius: 0 0  var(--card-border-radius-4) var(--card-border-radius-2);
+}
+
+.welcome_box h3 {
+   margin: 3rem 1rem;
+}
 
 /*=============================== general post styles =============================*/
 
 .post_thumbnail
 {
-    border-radius: var(--card-border-radius-4);
-    border: 0.5rem solid var(--color-gray-900);
+    border-radius: var(--card-border-radius-2) var(--card-border-radius-2)  var(--card-border-radius-4) var(--card-border-radius-2);
+    border: 0.6rem solid var(--color-gray-900);
     overflow: hidden;
     margin-bottom: 1.6rem;
 }
