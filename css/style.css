@@ -150,6 +150,10 @@ nav button {
     gap: 4rem;
 }
 
+.nav_items a:hover {
+    color: var(--color-bg);
+}
+
 .nav_profile {
     position: relative;
     cursor: pointer;
