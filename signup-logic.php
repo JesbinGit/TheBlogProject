@@ -55,7 +55,7 @@ if (isset($_POST['submit'])) {
             $idname = $idcode;
 
             //validating avatar
-            $allowed_files = ['png','jpg','jpeg'];
+            $allowed_files = ['png', 'PNG', 'jpg', 'JPG', 'jpeg', 'JPEG'];
             $extenstion = explode('.', $avatar_name);
             $extenstion = end($extenstion);
             if (in_array($extenstion, $allowed_files)){
@@ -63,10 +63,10 @@ if (isset($_POST['submit'])) {
                 if($avatar['size'] < 10000000){
                     move_uploaded_file($avatar_tmp_name, $avatar_destination_path);
                 } else {
-                    $_SESSION['add-user'] = "Image is too large , should be less than 1 mb";
+                    $_SESSION['signup'] = "Image is too large , should be less than 1 mb";
                 }    
             }else {
-                $_SESSION['add-user'] = "Unsupported Formatt, File should be .jpg .jpeg .png "; 
+                $_SESSION['signup'] = "Unsupported Formatt, File should be .jpg .jpeg .png "; 
             }
          }
         }   
