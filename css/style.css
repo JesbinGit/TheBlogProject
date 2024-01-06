@@ -157,15 +157,15 @@ nav button {
 .nav_signup {
     color: var(--color-white);
     transition: var(--transition);
-}
-.nav_butt-signup {
     background-color: var(--color-bg);
-    border-radius: var(--card-border-radius-2);
-    padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+    display: inline-block;
+    border-radius: var(--card-border-radius-3);
+    padding: 0.7rem 1rem;
 }
 
-.nav_butt-signup:hover {
+.nav_signup:hover {
     background-color: var(--color-primary-variant);
+    color: var(--color-bg);
     transition: var(--transition);
 }
 
@@ -173,7 +173,7 @@ nav button {
 .nav_butt {     
     background-color: var(--color-bg);
     border-radius: var(--card-border-radius-3);
-    padding: 0.5rem 1rem 0.5rem 1rem;
+    padding: 0.5rem 1rem;
 }
 
 .nav_profile ul {
