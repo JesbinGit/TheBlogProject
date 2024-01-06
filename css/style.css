@@ -155,18 +155,30 @@ nav button {
     cursor: pointer;
 }
 
-.nav_signup {
-    color: var(--color-white);
-    transition: var(--transition);
-    background-color: var(--color-bg);
-    display: inline-block;
-    border-radius: var(--card-border-radius-3);
-    padding: 0.7rem 1rem;
+.account_op {
+    display: flex;
+    gap: 0.1rem;
 }
 
-.nav_signup:hover {
-    background-color: var(--color-primary-variant);
-    color: var(--color-bg);
+.nav_sign {
+    color: var(--color-white);
+    transition: var(--transition);
+    background-color: var(--color-deep-dark);
+    display: inline-block;
+    padding: 0.7rem 1rem;
+}
+.nav_sign.up {
+    border-radius: var(--card-border-radius-1)  var(--card-border-radius-3)  var(--card-border-radius-4) var(--card-border-radius-1);
+}
+
+.nav_sign.in {
+    border-radius: var(--card-border-radius-3)  var(--card-border-radius-1)  var(--card-border-radius-1) var(--card-border-radius-4);
+}
+
+
+.nav_sign:hover {
+    background-color: var(--color-bg);
+    color: var(--color-primary-variant);
     transition: var(--transition);
 }
 

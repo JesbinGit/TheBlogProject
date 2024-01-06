@@ -49,8 +49,10 @@
 
                 </li>
                 <?php else : ?>
-                <li><a href = "<?= ROOT_URL?>signin.php"> Sign in  </a> </li>
-                <li class="nav_butt-signup" ><a href = "<?= ROOT_URL?>signup.php"  class="nav_signup"> Sign Up  </a> </li>
+                    <div class="account_op">
+                        <li><a href = "<?= ROOT_URL?>signin.php" class="nav_sign in"> Sign in  </a> </li>
+                        <li  ><a href = "<?= ROOT_URL?>signup.php"  class="nav_sign up"> Sign Up  </a> </li>
+                    </div>
                 <?php endif ?>
             </ul>
 
