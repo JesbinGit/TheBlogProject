@@ -37,11 +37,11 @@
                 </div>
             
             </div>
-            <div class="singlepost__thumbnail">
-                <img src="images/<?=$post['thumbnail']?>">
+                <div class="singlepost__thumbnail">
+                    <img src="images/<?=$post['thumbnail']?>">
                 </div>
                 <p><?=$post['body']?></p>
-            </div>   
+        </div>
      </section>
 
 
