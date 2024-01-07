@@ -49,8 +49,8 @@
 }
 
 :focus {
-    box-shadow: 0 0 0 5px var(--color-primary-neon);
-    transition: var(--transition);
+    outline: 5px solid var(--color-primary-neon);
+    transition: outline 200ms ease-in-out;
 }
 
 body {
