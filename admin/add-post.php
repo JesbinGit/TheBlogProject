@@ -6,8 +6,8 @@
     $categories = mysqli_query($connection, $query);
 
     //Recover entry if any error occured
-    $title = $_SESSION['add-post-data']['title'] ?? null;
-    $body = $_SESSION['add-post-data']['body'] ?? null;
+ //   $title = $_SESSION['add-post-data']['title'] ?? null;
+    // $body = $_SESSION['add-post-data']['body'] ?? null;
 
     unset($_SESSION['add-post-data']);
 ?>
