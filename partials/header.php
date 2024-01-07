@@ -18,7 +18,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Website</title>
+    <title>Blog Project</title>
    
     <link rel = "stylesheet" href="<?= ROOT_URL?>css/style.css">
     <!--Icon Scout cdn for icons like the three lines or unicons-->

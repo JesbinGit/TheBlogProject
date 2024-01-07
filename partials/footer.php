@@ -54,7 +54,7 @@
         </div>
             <div class=" footer__copyright">
 
-                <small> Copyright &copy; Yo Momma So Big Corporations 2069</small>
+                <small> Copyright &copy; The Blog Project 2024</small>
 
             </div>
 

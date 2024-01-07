@@ -143,6 +143,7 @@ nav button {
 .nav_logo {
     font-weight: 600;
     font-size: 1.2rem;
+    margin-right: 1rem;
 }
 
 .nav_items {
@@ -170,6 +171,7 @@ nav button {
     transition: var(--transition);
     background-color: var(--color-deep-dark);
     display: inline-block;
+    text-align: center;
     padding: 0.7rem 1rem;
 }
 .nav_sign.up {
@@ -288,7 +290,6 @@ nav button {
     background-color: var(--color-deep-dark);
     border-radius: var(--card-border-radius-3)  var(--card-border-radius-3)  var(--card-border-radius-4) var(--card-border-radius-4);
     padding: 1rem 1rem;
-    margin: 2rem;
 }
 
 .signup_butt.link {     
@@ -662,14 +663,17 @@ input, textarea, select {
 .singlepost__container
 {
     width: 75%;
-   /* background: var(--color-gray-700); */
+    background: var(--color-gray-700);
+    border-radius: var(--card-border-radius-1);
+    border-bottom-right-radius: var(--card-border-radius-4);
     padding: 1rem 2rem 2rem;
-    background: transparent;
 
 }
 .singlepost__thumbnail
 {
    margin: 2rem 0 2rem;
+   border-radius: var(--card-border-radius-3);
+   overflow: hidden;
    
 }
 
