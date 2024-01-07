@@ -682,6 +682,26 @@ input, textarea, select {
     line-height: 1.7;
 }
 
+.more_post {
+    background-image: linear-gradient(var(--color-bg),var(--color-primary-variant)) ;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: var(--card-border-radius-1);
+    border-bottom-right-radius: var(--card-border-radius-4);
+    margin-bottom: 3rem;
+}
+
+.more_category {     
+    background-color: var(--color-bg);
+    border-radius: var(--card-border-radius-1);
+    text-align: center;
+    padding: 0.1rem 1rem;
+}
+
+.more_category:hover {
+    background-color: var(--color-primary-neon);
+    transition: var(--transition);
+}
+
  /*======================================== Category page  ======================================== */
 .category__title
 {
