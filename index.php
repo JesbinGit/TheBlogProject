@@ -11,6 +11,7 @@
     $posts = mysqli_query($connection, $query);
 
 ?>
+
  
     <!--welcome message-->
     <?php if(!(isset($_SESSION['user_id']))) : ?>
@@ -23,6 +24,7 @@
         </div>
     <?php endif ?>
     
+
     <!--Show featured if any-->
     <?php if(mysqli_num_rows($featured_result)==1) : ?>
         <section class=" featured">
