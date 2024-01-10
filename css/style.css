@@ -4,6 +4,7 @@
     --color-primary: #6f6af8;
     --color-primary-light: hsla(242, 91%, 69%, 0.18);
     --color-primary-variant: #5854c7;
+    --color-primary-neon:#00aaff;
     --color-red: #da0f3f;
     --color-red-neon: #ff0015;
     --color-red-light: hsl(346, 87%, 46%, 15%);
@@ -15,9 +16,11 @@
     --color-gray-200: rgba(242, 242, 254, 0.7);
     --color-white: #ffffff;
     --color-bg: #0f0f3e;
+    --color-deep-dark: #000015;
   
 
     --transition: all 350ms ease;
+    --transition-profile: all 750ms ease; 
     
    
     --container-width-lg: 74%;
@@ -43,6 +46,11 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
+}
+
+:focus {
+    outline: 5px solid var(--color-primary-neon);
+    transition: outline 200ms ease-in-out;
 }
 
 body {
@@ -141,6 +149,7 @@ nav button {
 .nav_logo {
     font-weight: 600;
     font-size: 1.2rem;
+    margin-right: 1rem;
 }
 
 .nav_items {
@@ -149,9 +158,47 @@ nav button {
     gap: 4rem;
 }
 
+.nav_items a:hover {
+    color: var(--color-bg);
+}
+
 .nav_profile {
     position: relative;
     cursor: pointer;
+}
+
+.account_op {
+    display: flex;
+    gap: 0.1rem;
+}
+
+.nav_sign {
+    color: var(--color-white);
+    transition: var(--transition);
+    background-color: var(--color-deep-dark);
+    display: inline-block;
+    text-align: center;
+    padding: 0.7rem 1rem;
+}
+.nav_sign.up {
+    border-radius: var(--card-border-radius-1)  var(--card-border-radius-3)  var(--card-border-radius-4) var(--card-border-radius-1);
+}
+
+.nav_sign.in {
+    border-radius: var(--card-border-radius-3)  var(--card-border-radius-1)  var(--card-border-radius-1) var(--card-border-radius-4);
+}
+
+
+.nav_sign:hover{
+    background-color: var(--color-primary-neon);
+    transition: var(--transition);
+}
+
+/*.nav_butt is not used*/
+.nav_butt {     
+    background-color: var(--color-bg);
+    border-radius: var(--card-border-radius-3);
+    padding: 0.5rem 1rem;
 }
 
 .nav_profile ul {
@@ -164,7 +211,7 @@ nav button {
     background: var(--color-gray-900);
     visibility: hidden;
     opacity: 0;
-    transition: var(--transition);
+    transition: var(--transition-profile);
 }
 
 /*======================= Show ul nav dashboard When Hover =======================*/
@@ -176,7 +223,7 @@ nav button {
 
 .nav_profile ul li a {
     padding: 1rem;
-    background: var(--color-gray-900);
+    background: var(--color-primary-variant);
     display: block;
     width: 100%;
 }
@@ -243,13 +290,42 @@ nav button {
     margin-left: auto;
     margin-right: auto;
 }
+/*================================== Welcome message ===============================*/
+
+.signup_butt {     
+    background-color: var(--color-deep-dark);
+    border-radius: var(--card-border-radius-3)  var(--card-border-radius-3)  var(--card-border-radius-4) var(--card-border-radius-4);
+    padding: 1rem 1rem;
+}
+
+.signup_butt.link {     
+    border-radius: var(--card-border-radius-1);
+    padding: 0.1rem 1rem;
+    margin: 1rem 1rem;
+}
+
+.signup_butt:hover, .signup_butt.link:hover {     
+    background-color: var(--color-primary-neon);
+    transition: var(--transition);
+}
+
+.welcome_box {
+    background-image: linear-gradient(var(--color-bg),var(--color-primary)) ;
+    padding: 1rem 5rem 3rem 3rem;
+    border-radius: 0 0  var(--card-border-radius-4) var(--card-border-radius-2);
+    width: var(--container-width-md);
+}
+
+.welcome_box h3 {
+   margin: 3rem 1rem;
+}
 
 /*=============================== general post styles =============================*/
 
 .post_thumbnail
 {
-    border-radius: var(--card-border-radius-4);
-    border: 0.5rem solid var(--color-gray-900);
+    border-radius: var(--card-border-radius-2) var(--card-border-radius-2)  var(--card-border-radius-4) var(--card-border-radius-2);
+    border: 0.6rem solid var(--color-gray-900);
     overflow: hidden;
     margin-bottom: 1.6rem;
 }
@@ -594,14 +670,17 @@ input, textarea, select {
 .singlepost__container
 {
     width: 75%;
-   /* background: var(--color-gray-700); */
+    background: var(--color-gray-700);
+    border-radius: var(--card-border-radius-1);
+    border-bottom-right-radius: var(--card-border-radius-4);
     padding: 1rem 2rem 2rem;
-    background: transparent;
 
 }
 .singlepost__thumbnail
 {
    margin: 2rem 0 2rem;
+   border-radius: var(--card-border-radius-3);
+   overflow: hidden;
    
 }
 
@@ -609,6 +688,27 @@ input, textarea, select {
     margin-top: 1rem;
     line-height: 1.7;
 }
+
+.more_post {
+    background-image: linear-gradient(var(--color-bg),var(--color-primary-variant)) ;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: var(--card-border-radius-1);
+    border-bottom-right-radius: var(--card-border-radius-4);
+    margin-bottom: 3rem;
+}
+
+.more_category {     
+    background-color: var(--color-bg);
+    border-radius: var(--card-border-radius-1);
+    text-align: center;
+    padding: 0.1rem 1rem;
+}
+
+.more_category:hover {
+    background-color: var(--color-primary-neon);
+    color: var(--color-bg);
+    transition: var(--transition);  
+}   
 
  /*======================================== Category page  ======================================== */
 .category__title

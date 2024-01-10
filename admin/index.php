@@ -113,7 +113,7 @@
                                 </td>
                                 <td><?=$post['category']?></td>
                                 <td><a href="<?=ROOT_URL?>admin/edit-post.php?id=<?=$post['id']?>" class="btn sm">Edit</a></td>
-                                <td><a href="<?=ROOT_URL?>admin/delete-post.php?id=<?=$post['id']?>" class="btn sm danger">Delete</a></td>
+                                <td><a onclick="return confirm('Are you sure that you want to delete post <?=$post['title']?>?');" href="<?=ROOT_URL?>admin/delete-post.php?id=<?=$post['id']?>" class="btn sm danger">Delete</a></td>
                             </tr>
 
                         <?php endwhile; ?>

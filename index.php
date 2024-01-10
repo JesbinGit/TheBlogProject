@@ -11,7 +11,19 @@
     $posts = mysqli_query($connection, $query);
 
 ?>
-     
+
+ 
+    <!--welcome message-->
+    <?php if(!(isset($_SESSION['user_id']))) : ?>
+        <div class="section_extra-margin container welcome_box"> 
+            <h1>Welcome to The Blog Project! </h1> 
+            <h3>🌟 Elevate your experience – <a href="<?=ROOT_URL?>signup.php" class="signup_butt link">sign up now!</a> Unleash a wave of inspiration,
+                 join our community, and discover a world of possibilities. Your journey begins with a warm welcome! 
+            </h3>
+            <a href="<?=ROOT_URL?>signup.php" class=" signup_butt">Sign Up!</a>
+        </div>
+    <?php endif ?>
+    
 
     <!--Show featured if any-->
     <?php if(mysqli_num_rows($featured_result)==1) : ?>

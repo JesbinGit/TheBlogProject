@@ -18,7 +18,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Website</title>
+    <title>Blog Project</title>
    
     <link rel = "stylesheet" href="<?= ROOT_URL?>css/style.css">
     <!--Icon Scout cdn for icons like the three lines or unicons-->
@@ -49,7 +49,10 @@
 
                 </li>
                 <?php else : ?>
-                <li><a href = "<?= ROOT_URL?>signin.php"> Sign in  </a> </li>
+                    <div class="account_op">
+                        <li><a href = "<?= ROOT_URL?>signin.php" class="nav_sign in"> Sign in  </a> </li>
+                        <li  ><a href = "<?= ROOT_URL?>signup.php"  class="nav_sign up"> Sign Up  </a> </li>
+                    </div>
                 <?php endif ?>
             </ul>
 

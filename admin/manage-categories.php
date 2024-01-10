@@ -112,7 +112,7 @@
                                     <td></td>
                                 <?php else : ?>
                                     <td><a href="edit-category.php?id=<?=$category['id']?>" class="btn sm">Edit</a></td>
-                                    <td><a href="delete-category.php?id=<?=$category['id']?>" class="btn sm danger">Delete</a></td>
+                                    <td><a onclick="return confirm('Are you sure that you want to delete <?=$category['title']?> Category ?');" href="delete-category.php?id=<?=$category['id']?>" class="btn sm danger">Delete</a></td>
                                 <?php endif ?>
 
                             </tr>
